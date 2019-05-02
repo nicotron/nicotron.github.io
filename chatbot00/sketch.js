@@ -7,17 +7,16 @@
 function setup() {
   noCanvas();
 
-  // variable for the RiveScript
   let bot = new RiveScript();
-  // Load an individual file.
-  bot.loadFile("brain.rive").then(loading_done).catch(loading_error);
-  // two callbacks 1/2
-  function loading_done() {
-    console.log('Chatbot ready!')
-    bot.sortReplies(); // this must be that
+  bot.loadFile("brain.rive", brainReady, brainError);
+
+  function brainReady() {
+    console.log('Chatbot ready!');
+    bot.sortReplies();
   }
-  // 2/2
-  function loading_error() {
+
+
+  function brainError() {
     console.log('Chatbot error!')
   }
 
@@ -28,12 +27,8 @@ function setup() {
   button.mousePressed(chat);
 
   function chat() {
-    // gettin the value of the variable user_input made by keyboard
     let input = user_input.value();
-    let reply = bot.reply("local-user", input);
-    // displaying that new variable in the html page
-    output.html(reply);
+    let reply = bot.reply('local-user', input);
+    output.html(input);
   }
-
-
 }
