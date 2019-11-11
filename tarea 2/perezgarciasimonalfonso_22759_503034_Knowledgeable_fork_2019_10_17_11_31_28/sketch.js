@@ -1,0 +1,173 @@
+function setup() {
+  createCanvas(400, 400);
+  angleMode (DEGREES);
+}
+
+function draw() {
+  background(230);
+  push ();
+  translate (50, 50);
+  scale (0.25);
+  pattern1 ();
+  pop ();
+  push ();
+  translate (150, 50);
+  rotate (180);
+  scale (0.25);
+  pattern2 ();
+  pop ();
+  push ();
+  translate (250, 50);
+  scale (0.25);
+  pattern1 ();
+  pop ();
+  push ();
+  translate (350, 50);
+  scale (0.25);
+  pattern2 ();
+  pop ();
+  //secondrow
+  push ();
+  translate (350, 150);
+  scale (0.25);
+  rotate (180);
+  pattern1 ();
+  pop ();
+  push ();
+  translate (250, 150);
+  scale (0.25);
+  rotate (180);
+  pattern2 ();
+  pop ();
+  push ();
+  translate (150, 150);
+  rotate (180);
+  scale (0.25);
+  pattern1 ();
+  pop ();
+  push ();
+  translate (50, 150);
+  rotate (180);
+  scale (0.25);
+  pattern2 ();
+  pop ();
+  //thirdrow
+  push ();
+  translate (50, 250);
+  scale (0.25);
+  pattern1 ();
+  pop ();
+  push ();
+  translate (150, 250);
+  scale (0.25);
+  pattern2 ();
+  pop ();
+  push ();
+  translate (250, 250);
+  scale (0.25);
+  pattern1 ();
+  pop ();
+  push ();
+  translate (350, 250)
+  scale (0.25);
+  pattern2 ();
+  pop ();
+  //fourthrow
+  push ();
+  translate (50, 350);
+  rotate (180);
+  scale (0.25);
+  pattern2 ();
+  pop ();
+  push ();
+  translate (150, 350);
+  rotate (180);
+  scale (0.25);
+  pattern1 ();
+  pop ();
+  push ();
+  translate (250, 350);
+  rotate (180);
+  scale (0.25);
+  pattern2 ();
+  pop ();
+  push ();
+  translate (350, 350);
+  rotate (180);
+  scale (0.25);
+  pattern1 ();
+  pop ();
+}
+
+function pattern1 () {
+  translate (-200, -200);
+  fill (12, 5, 29);
+  triangle (0, 200, 200, 300, 400, 200);
+  fill (13, 13, 178);
+  noStroke();
+  triangle (0, 0, 200, 100, 0, 200);
+  noStroke();
+  triangle (200, 300, 400, 200, 400, 400);
+  fill (241, 90, 41);
+  noStroke();
+  triangle (0, 200, 200, 300, 0, 400);
+  fill (12, 0, 98);
+  noStroke ();
+  triangle (0, 200, 200, 100, 400, 200);
+  fill (236, 0, 140);
+  triangle (400, 0, 200, 100, 400, 200);
+}
+
+function pattern2 () {
+  translate (-200, -200);
+  noStroke();
+  fill (12, 5, 29);
+  triangle (0, 200, 200, 300, 400, 200);
+  fill (13, 13, 178);
+  noStroke();
+  triangle (0, 0, 200, 100, 0, 200);
+  noStroke();
+  triangle (200, 300, 400, 200, 400, 400);
+  fill (241, 90, 41);
+  noStroke();
+  triangle (0, 200, 200, 300, 0, 400);
+  fill (12, 0, 98);
+  noStroke ();
+  triangle (0, 200, 200, 100, 400, 200);
+  fill (236, 0, 140);
+  triangle (400, 0, 200, 100, 400, 200);
+  fill (0, 0, 0);
+  ellipse (200, 190, 360);
+  fill (255, 255, 255);
+  ellipse (200, 210, 360);
+  fill (13, 13, 178);
+  ellipse (210, 200, 360);
+  fill (241, 90, 41);
+  ellipse (190, 200, 360);
+  fill (236, 0, 140);
+  ellipse (200, 200, 360);
+  fill (13, 13, 178);
+  rect (125, 125, 150, 150);
+  fill (0, 0, 0);
+  ellipse (200, 300, 160);
+  ellipse (200, 100, 160);
+  ellipse (100, 200, 160);
+  ellipse (300, 200, 160);
+  fill (241, 90,41)
+  noStroke();
+  quad (100, 120, 180, 200, 100, 280, 20, 200);
+  quad (200, 20, 280, 100, 200, 180, 120, 100); 
+  quad (300, 120, 380, 200, 300, 280, 220, 200);
+  quad (200, 220, 280, 300, 200, 380, 120, 300);
+  fill (13, 13, 178);
+  square (60, 160, 80);
+  square (160, 60, 80);
+  square (260, 160, 80);
+  square (160, 260, 80);
+  fill (255, 255, 255);
+  ellipse (200, 200, 35);
+  ellipse (200, 100, 70);
+  ellipse (100, 200, 70);
+  ellipse (300, 200, 70);
+  ellipse (200, 300, 70);
+}
