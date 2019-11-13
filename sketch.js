@@ -1,5 +1,10 @@
 let txt, txt_Width_Window, index, txtSize, img, msg, indexM;
 let points = [-250, -250, 250, -250, 250, 250, -250, 250];
+let mazurquica;
+
+function preload() {
+  mazurquica = loadFont('Mazurquica-Medium.otf');
+}
 
 function setup() {
   createCanvas(1024, 768, WEBGL);
@@ -15,7 +20,7 @@ function setup() {
     'EL DERECHO DE VIVIR EN PAZ',
     'NOS ESTAN MATANDO',
     'HASTA QUE VALGA LA PENA VIVIR',
-    'DESDE CAMILO CATRILLANCA \nA GUSTAVO GATICA \nHAY 361 DIAS'
+    'DESDE CAMILO CATRILLANCA A GUSTAVO GATICA \n\nHAY 361 DIAS'
   ]
   console.log(indexM, msg.length);
 }
@@ -24,6 +29,7 @@ function draw() {
   background(0);
 
   txt.background(0);
+  txt.textFont(mazurquica);
   txt.textSize(txtSize);
 
   txt.fill(255);
