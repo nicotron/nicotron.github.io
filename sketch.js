@@ -1,5 +1,5 @@
 let txt, txt_Width_Window, index, txtSize, img, msg, indexM;
-let points = [0, 0, 0, 0, 0, 0, 0, 0];
+let points = [-250, -250, 250, -250, 250, 250, -250, 250];
 
 function setup() {
   createCanvas(1024, 768, WEBGL);
@@ -8,7 +8,7 @@ function setup() {
   txt = createGraphics(txt_Width_Window, 500);
 
   index = 0;
-  txtSize = 10;
+  txtSize = 20;
   img = loadImage('bg.jpeg');
   indexM = 0;
   msg = [
@@ -67,6 +67,14 @@ function keyPressed() {
 
     if (indexM > msg.length - 1) {
       indexM = 0;
+    }
+  }
+  if (keyCode === LEFT_ARROW) {
+    console.log(indexM, msg.length);
+    indexM = indexM - 1;
+
+    if (indexM < 0) {
+      indexM = msg.length - 1;
     }
   }
   return false; // prevent default
