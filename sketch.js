@@ -20,19 +20,21 @@ function setup() {
     'EL DERECHO DE VIVIR EN PAZ',
     'NOS ESTAN MATANDO',
     'HASTA QUE VALGA LA PENA VIVIR',
-    'DESDE CAMILO CATRILLANCA A GUSTAVO GATICA \n\nHAY 361 DIAS'
+    'DESDE CAMILO CATRILLANCA A GUSTAVO GATICA \n\nHAY 361 DIAS',
+    'NUEVA CONSTITUCION',
+    'PROMETIMOS QUE NUNCA MÁS'
   ]
-  console.log(indexM, msg.length);
+  // console.log(indexM, msg.length);
 }
 
 function draw() {
   background(0);
-
-  txt.background(0);
+  push();
+  txt.background(0, 255);
   txt.textFont(mazurquica);
   txt.textSize(txtSize);
-
   txt.fill(255);
+  txt.strokeWeight(0);
   txt.text(msg[indexM], 0, 0, txt_Width_Window, 768);
   texture(txt);
   beginShape();
@@ -41,13 +43,42 @@ function draw() {
   vertex(points[4], points[5], txt_Width_Window, txt_Width_Window);
   vertex(points[6], points[7], 0, txt_Width_Window);
   endShape();
+  pop();
 
-  strokeWeight(0.2);
-  stroke(140);
+  strokeWeight(1);
+  stroke(120);
+  line(points[0], points[1], points[2], points[3]);
+  line(points[2], points[3], points[4], points[5]);
+  line(points[4], points[5], points[6], points[7]);
+  line(points[6], points[7], points[0], points[1]);
+  strokeWeight(2);
   point(points[0], points[1]);
   point(points[2], points[3]);
   point(points[4], points[5]);
   point(points[6], points[7]);
+
+
+  //
+  //
+  // beginShape();
+  // strokeWeight(3);
+  // stroke(250);
+  // vertex(points[0], points[1]);
+  // vertex(points[2], points[3]);
+  // vertex(points[4], points[5]);
+  // vertex(points[6], points[7]);
+  // endShape();
+  //
+  // if(second()%5===0) {
+  //   console.log(second());
+  //   if (indexM > msg.length - 1) {
+  //     indexM = 0;
+  //     break;
+  //   }
+  //   indexM = indexM + 1;
+  //   break;
+  // }
+
 }
 
 function mousePressed() {
@@ -56,7 +87,7 @@ function mousePressed() {
   }
   points[index] = mouseX - width / 2;
   points[index + 1] = mouseY - height / 2;
-  console.log(index, points[index], points[index + 1], points);
+  // console.log(index, points[index], points[index + 1], points);
 
   index += 2;
 }
@@ -68,7 +99,7 @@ function keyPressed() {
     txtSize = txtSize - 1;
   }
   if (keyCode === RIGHT_ARROW) {
-    console.log(indexM, msg.length);
+    // console.log(indexM, msg.length);
     indexM = indexM + 1;
 
     if (indexM > msg.length - 1) {
@@ -76,7 +107,7 @@ function keyPressed() {
     }
   }
   if (keyCode === LEFT_ARROW) {
-    console.log(indexM, msg.length);
+    // console.log(indexM, msg.length);
     indexM = indexM - 1;
 
     if (indexM < 0) {
@@ -88,8 +119,7 @@ function keyPressed() {
 
 function keyTyped() {
   if (key === 'a') {
-    console.log(indexM, msg.length);
-    console.log('here');
+    // console.log(indexM, msg.length);
     if (indexM > msg.length - 1) {
       indexM = 0;
     }
