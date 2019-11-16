@@ -1,6 +1,7 @@
 let txt, txt_Width_Window, index, txtSize, img, msg, indexM;
 let points = [-250, -250, 250, -250, 250, 250, -250, 250];
 let mazurquica;
+let pointer, vA, vB, vC, vD;  // vectors for the frame edit
 
 function preload() {
   mazurquica = loadFont('Mazurquica-Medium.otf');
@@ -25,9 +26,28 @@ function setup() {
     'PROMETIMOS QUE NUNCA MÁS'
   ]
   // console.log(indexM, msg.length);
+
+  //vectors
+  pointer = createVector(0, 0);
+  vA = createVector(-250, -250);
+  vB = createVector(  250, -250);
+  vC = createVector(  250, 250);
+  vD = createVector(-250, 250);
+
 }
 
 function draw() {
+
+  pointer.x = mouseX;
+  pointer.y - mouseY;
+
+  // next work, intruitive frame setting
+  // for(let i=0; i < points.length; i++){
+  //   if()
+  //
+  // }
+
+
   background(0);
   push();
   txt.background(0, 255);
