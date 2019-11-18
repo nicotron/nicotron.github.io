@@ -1,23 +1,37 @@
-let txt, txt_Width_Window, index, txtSize, msg, indexM, x, y, setRewind;
+
+let txt, txt_Width_Window, index, txtSize, msg, indexM, x, y, setRewind, wX, wY, init;
 // let points = [-250, -250, 250, -250, 250, 250, -250, 250];
 let points = [0,0,500,0,500,500,0,500];
-let mazurquica, frame, goX, goY;
+let mazurquica, frame, goX, goY, gifGo;
 let pointer;  // vectors for the frame edit
+
+//-- GIF
+let gifLength = 10;
+let canvas, gif;
+
 
 function preload() {
   mazurquica = loadFont('Mazurquica-Medium.otf');
 }
 
 function setup() {
+  wX = 600; wY = 200;
   // createCanvas(1024, 768, WEBGL);
-  createCanvas(windowWidth, windowHeight, WEBGL);
+  let p5vancas = createCanvas(wX, wY, WEBGL);
+  canvas = p5vancas.canvas;
+  gif = false;
+  init = 0;
+
+  // createCanvas(windowWidth, windowHeight, WEBGL);
   frame = true;
   goX= false;
   goY= false;
+  gifGo = false;
   setRewind = 40000;
   txt_Width_Window = 250;
   txt = createGraphics(txt_Width_Window, 500);
   y = 0;
+  x = 0;
   index = 0;
   txtSize = 200;
   indexM = 0;
@@ -32,7 +46,9 @@ function setup() {
     'miren como relumbran carabineros \n\npara ofrecerle premios a los obreros',
     'miren como se visten cabo y sargento \n\npara teñir de rojo los pavimentos',
     'miren como le muestran una escopeta \n\npara quitarle al pobre su marraqueta',
-    'NO HABRÁ PAZ MIENTRAS NO HAYA JUSTICIA'
+    'NO HABRÁ PAZ MIENTRAS NO HAYA JUSTICIA',
+    'NO VAMOS A PARAR',
+    'Quieres justicia? @sebastianpinera entrégate.'
   ]
   // console.log(indexM, msg.length);
 
@@ -42,8 +58,14 @@ function setup() {
 }
 
 function draw() {
-  translate(-windowWidth/2, -windowHeight/2);
+  // translate(-windowWidth/2, -windowHeight/2);
+  translate(-wX/2, -wY/2);
   background(0);
+
+
+  if(gif) {
+    capturer.start();
+  }
 
   push();
   txt.background(0, 255);
@@ -52,7 +74,7 @@ function draw() {
   txt.fill(255);
   txt.strokeWeight(0);
   // txt.text(msg[indexM].toUpperCase(), 0, y, txt_Width_Window, 1000);
-  txt.text(msg[indexM].toUpperCase(), y, txtSize);
+  txt.text(msg[indexM].toUpperCase(), x, y + txtSize);
   texture(txt);
   beginShape();
   vertex(points[0], points[1], 0, 0);
@@ -61,6 +83,19 @@ function draw() {
   vertex(points[6], points[7], 0, txt_Width_Window);
   endShape();
   pop();
+
+  if(gif) {
+    if(init < gifLength) {
+      capturer.capture(canvas);
+      init++;
+    } else if (init === gifLength) {
+      capturer.stop();
+      capturer.save();
+      gif = false;
+    }
+  }
+
+
 
   if(frame) {
     strokeWeight(1);
@@ -79,9 +114,13 @@ function draw() {
   if(y < -setRewind) {
     y = 0;
   }
+  if(x < -setRewind) {
+    x = 0;
+  }
 
-  if(goX) {x-=5;}
-  if(goY) {y-=5;}
+  if(goX) {x-=3;}
+  if(goY) {y-=3;}
+  if(gifGo) {gifLength++; console.log(gifLength);}
 
   for ( i = 0; i < points.length; i+= 2) {
     let d = dist(mouseX,mouseY,points[i],points[i+1]);
@@ -110,18 +149,30 @@ function mousePressed() {
 }
 
 function keyPressed() {
+  if (key === 'g') {
+    gif = true;
+  }
   if (key === ' ') {
     frame = !frame;
   }
   if (key === 'x') {
     goX = !goX;
+    gifGo = true;
   }
-  }
-  if (key === 'y') {
+  if (key === 'z') {
     goY = !goY;
+    gifGo = true;
   }
-  if (key === 'r') {
+  if (key === 's') {
+    setRewind = x*-1;
+    // gifLength = 0;
+    gifGo = false;
+  }
+  if (key === 'a') {
     setRewind = y*-1;
+    // gifLength = 0;
+    gifGo = false;
+    // gifLength = y*-1;
   }
   if (key === 'e') {
     setRewind = 4000;
