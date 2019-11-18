@@ -1,9 +1,8 @@
-
 let txt, txt_Width_Window, index, txtSize, msg, indexM, x, y, setRewind, wX, wY, init;
 // let points = [-250, -250, 250, -250, 250, 250, -250, 250];
-let points = [0,0,500,0,500,500,0,500];
+let points = [0, 0, 250, 50, 500, 0, 500, 500, 250, 450, 0, 500];
 let mazurquica, frame, goX, goY, gifGo;
-let pointer;  // vectors for the frame edit
+let pointer; // vectors for the frame edit
 
 //-- GIF
 let gifLength = 10;
@@ -15,7 +14,8 @@ function preload() {
 }
 
 function setup() {
-  wX = 600; wY = 200;
+  wX = 1600;
+  wY = 1200;
   // createCanvas(1024, 768, WEBGL);
   let p5vancas = createCanvas(wX, wY, WEBGL);
   canvas = p5vancas.canvas;
@@ -24,8 +24,8 @@ function setup() {
 
   // createCanvas(windowWidth, windowHeight, WEBGL);
   frame = true;
-  goX= false;
-  goY= false;
+  goX = false;
+  goY = false;
   gifGo = false;
   setRewind = 40000;
   txt_Width_Window = 250;
@@ -59,11 +59,11 @@ function setup() {
 
 function draw() {
   // translate(-windowWidth/2, -windowHeight/2);
-  translate(-wX/2, -wY/2);
+  translate(-wX / 2, -wY / 2);
   background(0);
 
 
-  if(gif) {
+  if (gif) {
     capturer.start();
   }
 
@@ -78,14 +78,20 @@ function draw() {
   texture(txt);
   beginShape();
   vertex(points[0], points[1], 0, 0);
-  vertex(points[2], points[3], txt_Width_Window, 0);
-  vertex(points[4], points[5], txt_Width_Window, txt_Width_Window);
-  vertex(points[6], points[7], 0, txt_Width_Window);
+
+  vertex(points[2], points[3], txt_Width_Window / 2, txt_Width_Window);
+
+  vertex(points[4], points[5], txt_Width_Window, 0);
+  vertex(points[6], points[7], txt_Width_Window, txt_Width_Window);
+
+  vertex(points[8], points[9], txt_Width_Window / 2, txt_Width_Window);
+
+  vertex(points[10], points[11], 0, txt_Width_Window);
   endShape();
   pop();
 
-  if(gif) {
-    if(init < gifLength) {
+  if (gif) {
+    if (init < gifLength) {
       capturer.capture(canvas);
       init++;
     } else if (init === gifLength) {
@@ -97,39 +103,46 @@ function draw() {
 
 
 
-  if(frame) {
+  if (frame) {
     strokeWeight(1);
     stroke(120);
-    line(points[0], points[1], points[2], points[3]);
-    line(points[2], points[3], points[4], points[5]);
-    line(points[4], points[5], points[6], points[7]);
-    line(points[6], points[7], points[0], points[1]);
-    strokeWeight(2);
-    point(points[0], points[1]);
-    point(points[2], points[3]);
-    point(points[4], points[5]);
-    point(points[6], points[7]);
-  }
-  // console.log(y, -(points[5]-points[3]));
-  if(y < -setRewind) {
+    for (let i = 0; i < points.length; i += 2) {
+
+      // line(points[i], points[i + 1], points[i + 2], points[i + 3]);
+      // strokeWeight(2);
+      point(points[i], points[i + 1]);
+      // point(points[2], points[3]);
+      // point(points[4], points[5]);
+      // point(points[6], points[7]);
+
+    }
+  } // console.log(y, -(points[5]-points[3]));
+  if (y < -setRewind) {
     y = 0;
   }
-  if(x < -setRewind) {
+  if (x < -setRewind) {
     x = 0;
   }
 
-  if(goX) {x-=3;}
-  if(goY) {y-=3;}
-  if(gifGo) {gifLength++; console.log(gifLength);}
+  if (goX) {
+    x -= 3;
+  }
+  if (goY) {
+    y -= 3;
+  }
+  if (gifGo) {
+    gifLength++;
+    console.log(gifLength);
+  }
 
-  for ( i = 0; i < points.length; i+= 2) {
-    let d = dist(mouseX,mouseY,points[i],points[i+1]);
-    if(d < 20) {
+  for (i = 0; i < points.length; i += 2) {
+    let d = dist(mouseX, mouseY, points[i], points[i + 1]);
+    if (d < 20) {
       // function mouseDragged() {
-        points[i] = mouseX;
-        points[i+1] = mouseY;
+      points[i] = mouseX;
+      points[i + 1] = mouseY;
       // }
-      line(mouseX,mouseY,points[i],points[i+1]);
+      line(mouseX, mouseY, points[i], points[i + 1]);
 
     }
   }
@@ -164,12 +177,12 @@ function keyPressed() {
     gifGo = true;
   }
   if (key === 's') {
-    setRewind = x*-1;
+    setRewind = x * -1;
     // gifLength = 0;
     gifGo = false;
   }
   if (key === 'a') {
-    setRewind = y*-1;
+    setRewind = y * -1;
     // gifLength = 0;
     gifGo = false;
     // gifLength = y*-1;
