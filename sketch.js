@@ -1,6 +1,13 @@
 let txt, txt_Width_Window, index, txtSize, msg, indexM, x, y, setRewind, wX, wY, init;
 // let points = [-250, -250, 250, -250, 250, 250, -250, 250];
-let points = [0, 0, 250, 50, 500, 0, 500, 500, 250, 450, 0, 500];
+let points = [
+  0, 0,
+  250, 50,
+  500, 0,
+  500, 500,
+  250, 450,
+  0, 500
+];
 let mazurquica, frame, goX, goY, gifGo;
 let pointer; // vectors for the frame edit
 
@@ -28,7 +35,7 @@ function setup() {
   goY = false;
   gifGo = false;
   setRewind = 40000;
-  txt_Width_Window = 250;
+  txt_Width_Window = 500;
   txt = createGraphics(txt_Width_Window, 500);
   y = 0;
   x = 0;
@@ -78,15 +85,11 @@ function draw() {
   texture(txt);
   beginShape();
   vertex(points[0], points[1], 0, 0);
-
-  vertex(points[2], points[3], txt_Width_Window / 2, txt_Width_Window);
-
-  vertex(points[4], points[5], txt_Width_Window, 0);
-  vertex(points[6], points[7], txt_Width_Window, txt_Width_Window);
-
-  vertex(points[8], points[9], txt_Width_Window / 2, txt_Width_Window);
-
-  vertex(points[10], points[11], 0, txt_Width_Window);
+  vertex(points[4], points[53], 250, 50);
+  vertex(points[2], points[3], 500, 0);
+  vertex(points[6], points[7], 500, 500);
+  vertex(points[8], points[9], 250, 500);
+  vertex(points[10], points[11], 0, 500);
   endShape();
   pop();
 
@@ -104,10 +107,10 @@ function draw() {
 
 
   if (frame) {
-    strokeWeight(1);
+
     stroke(120);
     for (let i = 0; i < points.length; i += 2) {
-
+      strokeWeight(2 + (i * 2));
       // line(points[i], points[i + 1], points[i + 2], points[i + 3]);
       // strokeWeight(2);
       point(points[i], points[i + 1]);
@@ -142,7 +145,10 @@ function draw() {
       points[i] = mouseX;
       points[i + 1] = mouseY;
       // }
-      line(mouseX, mouseY, points[i], points[i + 1]);
+      noFill();
+      strokeWeight(1)
+      stroke(255, 255, 0);
+      circle(points[i], points[i + 1], 50);
 
     }
   }
