@@ -1,0 +1,13 @@
+{
+    "nombre":"Nicolas Troncoso",
+    "preguntas_tiempo": [
+        {"tiempo" : "00:13", "pregunta": "1"},
+        {"tiempo" : "01:13", "pregunta": "2"},
+        {"tiempo" : "03:00", "pregunta": "3"},
+        {"tiempo" : "04:45", "pregunta": "4"},
+        {"tiempo" : "04:27", "pregunta": "5"},
+        {"tiempo" : "06:08", "pregunta": "6"},
+        {"tiempo" : "06:13", "pregunta": "7"},
+        {"tiempo" : "07:39", "pregunta": "8"}
+    ]
+}
