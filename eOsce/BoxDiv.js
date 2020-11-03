@@ -11,10 +11,10 @@ export default class BoxDiv {
 
             sk.setup = function () {
                 sk.createCanvas(350, 350);
-                
+
                 const p = [];
                 const t = [];
-                for (let j=0; j<10; j++) {
+                for (let j=0; j<3; j++) {
                     for (let i=0; i<10; i++) {
                         p.push((i*3) + sk.randomGaussian(-.5, .5));
                         t.push((i*60 )+ sk.randomGaussian(-20, 20));
@@ -25,9 +25,9 @@ export default class BoxDiv {
                     // sketch = new Data();
                     sketch = new Data(p, t);
                 }
-            } 
+            }
             sk.draw = function () {
-                // sk.background(255, 10);
+                sk.background(255, 10);
                 sketch.show(sk);
             }
         }, div);

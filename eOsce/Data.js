@@ -16,7 +16,7 @@ export default class Data {
         // sk.strokeWeight(1);
         // sk.line(0, 0, 200, 200);
 
-        
+
         sk.stroke(51);
         sk.strokeWeight(.1);
         sk.noFill();
@@ -28,7 +28,7 @@ export default class Data {
             )
         }
         sk.endShape();
-        
+
         for (let i=0; i<this.pregunta.length; i++) {
             sk.fill(250);
             sk.strokeWeight(1);
@@ -38,7 +38,7 @@ export default class Data {
                 2);
             // sk.print(this.tiempo[i]);
         }
-            
+
         // sk.beginShape();
         // sk.vertex(0, 0);
         // for (let i=0; i<200; i+=20) {
