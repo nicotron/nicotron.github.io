@@ -1,0 +1,28 @@
+{
+  "name": "nicotron.github.io",
+  "version": "0.0.1",
+  "description": "all the leaning prototypes for web devs in information design",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicotron/nicotron.github.io.git"
+  },
+  "keywords": [
+    "web",
+    "dev",
+    "information",
+    "design"
+  ],
+  "author": "Nicolás Troncoso López",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nicotron/nicotron.github.io/issues"
+  },
+  "homepage": "https://github.com/nicotron/nicotron.github.io#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
