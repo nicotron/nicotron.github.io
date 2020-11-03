@@ -4,6 +4,8 @@
   "description": "all the leaning prototypes for web devs in information design",
   "main": "index.html",
   "scripts": {
+    "start": "npm run lite",
+    "lite": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
