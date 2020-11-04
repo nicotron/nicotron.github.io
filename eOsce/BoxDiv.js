@@ -14,8 +14,8 @@ export default class BoxDiv {
 
                 const p = [];
                 const t = [];
-                for (let j=0; j<3; j++) {
-                    for (let i=0; i<10; i++) {
+                for (let j=0; j<1; j++) {
+                    for (let i=0; i<1; i++) {
                         p.push((i*3) + sk.randomGaussian(-.5, .5));
                         t.push((i*60 )+ sk.randomGaussian(-20, 20));
                     }
