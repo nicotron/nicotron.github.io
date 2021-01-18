@@ -1,7 +1,7 @@
 {
   "name": "nicotron.github.io",
   "version": "0.0.1",
-  "description": "all the leaning prototypes for web devs in information design",
+  "description": "all the learning prototypes for web devs in information design",
   "main": "index.html",
   "scripts": {
     "start": "npm run lite",
