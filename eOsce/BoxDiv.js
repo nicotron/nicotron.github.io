@@ -23,8 +23,8 @@ export default class BoxDiv
                             data.box_1[i].tiempo, 
                             data.box_1[i].pregunta
                             );
-                            t.push(data.box_1[i].tiempo + p5.randomGaussian(-.5, .5)); 
-                            p.push(data.box_1[i].pregunta + p5.randomGaussian(-.5, .5));
+                            t.push(data.box_1[i].tiempo);// + p5.randomGaussian(-.5, .5)); 
+                            p.push(data.box_1[i].pregunta ); //+ p5.randomGaussian(-.5, .5));
                     }
                     // sketch.print(data.box_1);
                     sketch = new Data(p, t);

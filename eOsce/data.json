@@ -1,14 +1,14 @@
 {
     "nombre":"Nicolas Troncoso",
     "box_1": [
-        {"tiempo" : 13, "pregunta": 10},
-        {"tiempo" : 73, "pregunta": 20},
-        {"tiempo" : 180, "pregunta": 30},
-        {"tiempo" : 285, "pregunta": 40},
-        {"tiempo" : 267, "pregunta": 50},
-        {"tiempo" : 368, "pregunta": 60},
-        {"tiempo" : 373, "pregunta": 70},
-        {"tiempo" : 459, "pregunta": 80}
+        {"tiempo" : 10, "pregunta": 10},
+        {"tiempo" : 20, "pregunta": 20},
+        {"tiempo" : 30, "pregunta": 30},
+        {"tiempo" : 40, "pregunta": 40},
+        {"tiempo" : 50, "pregunta": 50},
+        {"tiempo" : 60, "pregunta": 60},
+        {"tiempo" : 70, "pregunta": 70},
+        {"tiempo" : 80, "pregunta": 80}
     ],
     "box_2": [
         {"tiempo" : 3, "pregunta": 10},
