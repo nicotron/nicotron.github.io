@@ -4,7 +4,7 @@
   "description": "all the learning prototypes for web devs in information design",
   "main": "index.html",
   "scripts": {
-    "start": "npm run lite",
+    "dev": "npm run lite",
     "lite": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

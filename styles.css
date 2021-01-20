@@ -4,26 +4,19 @@
     margin: 0;
 }
 
+.body {
+    width: 100vh;
+    height: 100vh;
+    background-color: black;
+}
+
 .grid-container {
     display: grid;
 
     /* FOR ALL THE SCREEN */
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    /* grid-gap: 1px; */
-    width: 100vw;
-    height: 100vh;
-
-    /* grid-gap: 5px; */
-    /* background-color: black; */
-    /* padding: 0px; */
+    width: 99.99vw;
+    height: 98vh;
+    background-color: black;
 }
-
-/* .grid-item { */
-    /* background-color: black; */
-    /* border: 0px solid white; */
-    /* padding: 0px; */
-    /* font-size: 0px; */
-    /* text-align: center; */
-    /* color: white; */
-/* } */
