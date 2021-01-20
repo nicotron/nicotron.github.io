@@ -16,7 +16,7 @@ for (let index = 1; index < 17; index++) {
             p.col=p.color(0);
             p.background(p.col);
 
-            x = p.map(Math.floor(p.random(3)), 0, 2, 0, elemnt.offsetWidth);
+            x = p.map(Math.floor(p.random(3)), 0, 2, 0, elmnt.offsetWidth);
             // x = p.map(Math.floor(p.random(3)), 0, 2, 0, p.windowWidth*scaleWin);
             xvel = Math.floor(p.random(-2,2));
             setInterval(function(){ xvel = Math.floor(p.random(-2,2)); }, 3000);
