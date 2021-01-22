@@ -1,6 +1,6 @@
 // este script se aloja en las dimensiones de un div particular por medio de id
 
-for (let index = 1; index < 17; index++) {
+for (let index = 1; index < 5; index++) {
     
     new p5(( p ) => {
 
@@ -8,8 +8,12 @@ for (let index = 1; index < 17; index++) {
         let x, y, xvel;
 
         p.setup = () => {
+            // p.createCanvas(300, 300);
+            if (index === 3) {
+                p.createCanvas(800, 600);
+            }
             p.createCanvas(elmnt.offsetWidth , elmnt.offsetHeight);
-            p.col=p.color(0);
+            p.col=p.color(155+100/index, 255/index, 0);
             p.background(p.col);
 
             x = p.map(Math.floor(p.random(3)), 0, 2, 0, elmnt.offsetWidth);

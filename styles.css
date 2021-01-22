@@ -1,22 +1,16 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
-.body {
-    width: 100vh;
-    height: 100vh;
-    background-color: black;
-}
-
 .grid-container {
     display: grid;
-
-    /* FOR ALL THE SCREEN */
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    width: 99.99vw;
-    height: 98vh;
-    background-color: black;
+    /* distribution of and area layout */
+    /* rows are strings, words are columns */
+    grid-template-areas:    "home home"
+                            "menu canvas"
+                            "footer footer";
+    /* sizing of the layout */
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
 }
+
+#sketch1 { grid-area: home; }
+#sketch2 { grid-area: menu; }
+#sketch3 { grid-area: canvas; }
+#sketch4 { grid-area: footer; }
