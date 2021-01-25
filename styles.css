@@ -1,16 +1,113 @@
-.grid-container {
+
+/* Naming the areas */
+.main-head { grid-area: header; }
+.main-nav { grid-area: nav; }
+.content { grid-area: content; }
+.main-footer { grid-area: footer; }
+
+.main-head { background:white; }
+.main-nav { background:#white; }
+.content { background: #white;     padding: 0px; }
+.main-footer {    background: #white; }
+
+/* using those names mobile first because accessibility reads
+down */
+.wrapper {
     display: grid;
-    /* distribution of and area layout */
-    /* rows are strings, words are columns */
-    grid-template-areas:    "home home"
-                            "menu canvas"
-                            "footer footer";
-    /* sizing of the layout */
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr auto;
+    gap: 2px;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "content"
+    "footer";
 }
 
-#sketch1 { grid-area: home; }
-#sketch2 { grid-area: menu; }
-#sketch3 { grid-area: canvas; }
-#sketch4 { grid-area: footer; }
+/* responsive like */
+@media ( min-width: 500px ) {
+    .wrapper {
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas: 
+        "header header"
+        "nav content"
+        "footer footer";
+    }
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 700px) {
+    .wrapper {
+      grid-template-columns: 1fr 4fr;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas:
+        "header header"
+        "nav    content"
+        "footer footer"
+     }
+     nav ul {
+       flex-direction: column;
+     }
+  }
+  
+  
+/* selectors for area */
+#sketch1 { grid-area: cv1; }
+#sketch2 { grid-area: cv2; }
+#sketch3 { grid-area: cv3; }
+#sketch4 { grid-area: cv4; }
+#sketch5 { grid-area: cv5; }
+#sketch6 { grid-area: cv6; }
+
+/* using those names mobile first because accessibility reads
+down */
+.grid-container {
+    display: grid;
+    gap: 2px;
+    grid-template-areas:
+    "cv1"
+    "cv2"
+    "cv3"
+    "cv4"
+    "cv5"
+    "cv6";
+}
+
+@media ( min-width: 700px ) {
+    .grid-container {
+        display: grid;
+        /* distribution of and area layout */
+        /* rows are strings, words are columns */
+        grid-template-areas:    "cv1 cv2 cv3"
+                                "cv4 cv5 cv6";
+        
+        /* sizing of the layout */
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        row-gap: 120px;
+
+        background-color: black;
+        /* min-height: ; */
+    }
+}
+
+@media ( min-width: 2560px ) {
+    .grid-container {
+        display: grid;
+        /* distribution of and area layout */
+        /* rows are strings, words are columns */
+        grid-template-areas:    "cv1 cv2 cv3"
+                                "cv4 cv5 cv6";
+        
+        /* sizing of the layout */
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        gap: 200px;
+
+        background-color: black;
+        /* min-height: ; */
+    }
+}
