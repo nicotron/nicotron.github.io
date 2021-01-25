@@ -1,6 +1,6 @@
 // este script se aloja en las dimensiones de un div particular por medio de id
 
-for (let index = 1; index < 5; index++) {
+for (let index = 1; index < 7; index++) {
     
     new p5(( p ) => {
 
@@ -8,11 +8,11 @@ for (let index = 1; index < 5; index++) {
         let x, y, xvel;
 
         p.setup = () => {
-            // p.createCanvas(300, 300);
-            if (index === 3) {
-                p.createCanvas(800, 600);
-            }
-            p.createCanvas(elmnt.offsetWidth , elmnt.offsetHeight);
+            p.createCanvas(400, 300);
+            // if (index === 3) {
+            //     p.createCanvas(600, 400);
+            // }
+            // p.createCanvas(elmnt.offsetWidth , elmnt.offsetHeight);
             p.col=p.color(155+100/index, 255/index, 0);
             p.background(p.col);
 
@@ -22,7 +22,11 @@ for (let index = 1; index < 5; index++) {
         };
         
         p.draw = () => {
-            p.background(p.col);
+            p.background(0);
+            p.noFill();
+            p.strokeWeight(1);
+            p.stroke(255);
+            p.rect(0,0, p.width, p.height);
             p.noStroke();
             p.fill(255);
             p.circle(x, p.height, p.height);
@@ -36,7 +40,7 @@ for (let index = 1; index < 5; index++) {
         };
 
         p.windowResized = () => {
-            p.resizeCanvas(elmnt.offsetWidth , elmnt.offsetHeight);
+            // p.resizeCanvas(elmnt.offsetWidth , elmnt.offsetHeight);
         };
 
     }, document.getElementById( 'sketch'+index ));
