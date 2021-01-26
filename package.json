@@ -4,10 +4,12 @@
   "description": "all the learning prototypes for web devs in information design",
   "main": "index.html",
   "scripts": {
-    "dev": "npm run lite",
-    "lite": "lite-server",
+    "start": "npm run watch:all",
+    "watch:scss": "onchange \"styles/*.scss\" -- npm run scss",
+    "watch:all": "parallelshell \"npm run watch:scss\" \"npm run server\" ",
     "scss": "node-sass -o styles/ styles/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "lite-server",
+    "test": "echo \"here\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,10 @@
   },
   "dependencies": {
     "less": "^4.1.0",
-    "node-sass": "^5.0.0"
+    "node-sass": "^5.0.0",
+    "onchange": "^7.1.0",
+    "parallelshell": "^3.0.1",
+    "scss": "^0.2.4",
+    "watch": "^1.0.2"
   }
 }

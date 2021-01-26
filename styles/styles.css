@@ -24,8 +24,7 @@
 .main-footer {
   background: #white; }
 
-/* using those names mobile first because accessibility reads
-down */
+/* using those names mobile first because accessibility reads down */
 .wrapper {
   display: grid;
   gap: 2px;
