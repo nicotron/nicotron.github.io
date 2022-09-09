@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Title</title>
+</head>
+
+<body>
+    <h1>H1 inside body</h1>
+    <main>
+        <section>
+            <h2>H2 in section in main tags</h2>
+            <p>Text <a target="_blank" href="https://freecatphotoapp.com">link</a>.</p>
+
+            <!-- A image link structure: anchor scr alt -->
+            <a href="https://freecatphotoapp.com"><img
+                    src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg"
+                    alt="A cute orange cat lying on its back."></a>
+
+            <!-- A Figure Structure: image src alt, figcaption -->
+            <figure>
+                <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg"
+                    alt="A slice of lasagna on a plate.">
+                <figcaption>figcaption text</figcaption>
+            </figure>
+            <section>
+                <h2>Forms</h2>
+
+                <!-- Form strucuture: from action, fieldsets, legend, label, input complex structure -->
+                <form action="https://freecatphotoapp.com/submit-cat-photo">
+                    <fieldset>
+                        <legend>Form with boolean structure</legend>
+                        <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked>
+                            Indoor </label>
+                        <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Form with more than two opctions not boolean</legend>
+                        <input id="loving" type="checkbox" name="personality" value="loving" checked> <label
+                            for="loving">Loving</label>
+                        <input id="lazy" type="checkbox" name="personality" value="lazy"> <label for="lazy">Lazy</label>
+                        <input id="energetic" type="checkbox" name="personality" value="energetic"> <label
+                            for="energetic">Energetic</label>
+                    </fieldset>
+
+                    <input type="text" name="catphotourl" placeholder="placeholder" required>
+                    <button type="submit">Button Text</button>
+                </form>
+            </section>
+    </main>
+    <footer>
+        <p>
+            footer
+        </p>
+    </footer>
+</body>
+
+</html>
