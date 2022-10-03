@@ -2,10 +2,21 @@
     width: 500px;
     height: 600px;
     background-color: #4d0f00;
+    /* el parent con overflow hidden */
+        overflow: hidden;
 }
 .frame {
     border: solid black 50px;
     width: 500px;
     padding: 50px;
     margin: 20px auto;
+}
+.one {
+    width: 425px;
+    height: 150px;
+    background-color: #efb762;
+
+    /* un margin con overflow hidden del parent */
+    margin: 20px auto;
+
 }
