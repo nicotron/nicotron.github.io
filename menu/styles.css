@@ -6,3 +6,14 @@ p {
 body {
     background-color: gainsboro;
 }
+.item p {
+    display: inline-block;
+}
+
+.key {
+    text-align: left;
+}
+
+.value {
+    text-align: right;
+}
