@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Surver Form</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1 id="title">Titulo del formulario de encuesta</h1>
+        <p id="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis sapiente itaque incidunt aliquam</p>
+
+        <form id="survey-form" action="">
+            <fieldset>
+                
+                <label for="name-label" id="name-label">Name: 
+                    <input type="text" id="name" required placeholder="your name">
+                </label>
+                <label for="email-label" id="email-label" >Email:
+                    <input type="email" name="email-label" id="email" required placeholder="your email">
+                </label>
+                <label for="number-label" id="number-label" >Number
+                    <input type="number" name="number-label" id="number" required min="13" max="120" placeholder="a number">
+                </label>
+                
+            </fieldset>
+            
+            
+            <!-- dropdown -->
+            <fieldset>
+                <select name="dropdown" id="dropdown">
+                    <option value="">(select one)</option>
+                    <option value="option-one">option one</option>
+                    <option value="option-two">option two</option>
+                </select>
+            </fieldset>
+            
+            <!-- radio buttons -->
+            <fieldset>
+                <label for="radio-one"><input id="radio-one" type="radio" name="radio-options" class="inline" value="one" > Radio one</label>
+                <label for="radio-two"><input id="radio-two" type="radio" name="radio-options" class="inline" value="two" > Radio two</label>
+            </fieldset>
+
+            <!-- checkboxes -->
+            <fieldset>
+                <label for="check-label-1" name="check-label-1"> <input type="checkbox" name="check-label-1" value="1" > Checkbox 1</label>
+                <label for="check-label-2" name="check-label-2"> <input type="checkbox" name="check-label-2" value="2" > Checkbox 2</label>
+                <label for="check-label-3" name="check-label-3"> <input type="checkbox" name="check-label-3" value="3" > Checkbox 3</label>
+            </fieldset>
+
+            <!-- textarea -->
+            <fieldset>
+                <label for="textarea">Text area 
+                    <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+                </label>
+            </fieldset>
+            <input type="submit" id="submit" value="submit">
+        </form>
+    </body>
+
+</html>
