@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background-color: rgba(242, 242, 242, 1);
+    margin: 0;
+    font-family: 'Ubuntu';
+    font-weight: 400;
+    color: rgba(64, 64, 64, 1);
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline;
+    justify-content: center;
+}
+
+li a {
+    color: black;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    padding: 16px;
+    /* margin: 2px; */
+    border: 1px solid rgba(242, 242, 242, 1);
+}
+
+li a:hover {
+    border: 1px solid rgba(64, 64, 64, 1);
+}
+
+.active {
+    background: rgba(64, 64, 64, 1);
+    border: 1px solid rgba(64, 64, 64, 1);
+    color: rgba(242, 242, 242, 1);
+}
+
+
+h2 {
+    /* WIdely Research V1/H2 */
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 46px;
+    /* identical to box height */
+
+    letter-spacing: -0.02em;
+}
+
+h3 {
+    /* Widely Research V1/H3 */
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    /* identical to box height */
+    letter-spacing: -0.02em;
+
+}
+
+/* contenedor general */
+.container {
+    width: 1440px;
+    background-color: rgba(242, 242, 242, 1);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    height: 64px;
+    margin-bottom: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    margin: 0 8px 0 0;
+}
+
+/* imagenes galleria */
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 480px;
+    height: 300px;
+    object-fit: cover;
+}
