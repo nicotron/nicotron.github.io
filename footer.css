@@ -1,0 +1,41 @@
+footer {
+  color: var(--Monochrome-Black);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+ 
+  width: 100%; /*Ancho por defecto */
+  max-width: 1200px; /*Ancho máximo*/
+  display: flex;
+  justify-content: center;
+  margin: 16px auto; 
+}
+
+.hidden {
+  display: none;
+}
+
+#footer-content-sm {
+  display: none;
+}
+
+/* Para móviles */
+@media (max-width: 576px) {
+  #footer-content {
+    display: none;
+  }
+  #footer-content-sm {
+    display: flex;
+    justify-content: start;
+    text-align: left;
+  }
+  
+  #main-image{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height:auto;
+    margin: auto;
+  }
+}
