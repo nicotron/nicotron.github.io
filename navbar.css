@@ -81,14 +81,6 @@ a {
     color: var(--Monochrome-Lighter);
   }
 
-  h2 {
-    margin-top: -160px;
-    margin-left: -80px;
-    margin-right: 10px;
-    font-size: 36px;
-    font-weight: 700;
-    letter-spacing: -0.64px;
-  }
   
   .hidden {
     display: none;

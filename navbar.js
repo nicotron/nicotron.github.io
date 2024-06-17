@@ -45,19 +45,19 @@ function addNavLinkListeners() {
   links.forEach((link) => {
     link.addEventListener("click", function (event) {
       event.preventDefault(); // Evita el comportamiento por defecto del enlace
-      console.log(link.innerHTML);
-      const intro_text = document.getElementById("intro-text");
+      console.log("here");
       if (link.innerHTML === "O") {
-        console.log("here");
-        intro_text.classList.remove("hidden");
-        intro_text.textContent = this.dataset.text;
+        const para = document.createElement("h2");
+        para.innerText =
+          "Deberías ver este contenido en una pantalla más grande.";
+        para.setAttribute("id", "intro-text");
+        document.getElementById("home-intro").appendChild(para);
         const imageSrc = this.getAttribute("data-image");
         changeImage(imageSrc);
       } else {
-        intro_text.textContent = "";
-        intro_text.classList.add("hidden");
         const imageSrc = this.getAttribute("data-image");
         changeImage(imageSrc);
+        document.getElementById("intro-text").remove();
       }
     });
   });
