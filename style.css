@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     /* Colores */
     --white: #F0F0F0;
@@ -9,13 +14,6 @@
     --Font-Ubuntu:'Ubuntu';
     --Ubuntu-Regular: 400;
     --Ubuntu-Bold: 700;
-}
-
-body {
-    background-color: var(--light_primary);
-    color: var(--dark_primary);
-    font-family: var(--Font-Ubuntu);
-    font-weight: var(--Ubuntu-Regular);
 }
 
 h1 {
@@ -30,6 +28,26 @@ h3 {
     letter-spacing: -0.48px;
 }
 
+body {
+    background-color: var(--light_primary);
+    color: var(--dark_primary);
+    font-family: var(--Font-Ubuntu);
+    font-weight: var(--Ubuntu-Regular);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    
+    & > h3 {
+        padding: 12px 24px;
+    }
+}
+
+#square {
+    padding: 8px;
+}
+
 .body-text {
     font-size: 16px;
     font-weight: 400;
@@ -37,9 +55,33 @@ h3 {
     letter-spacing: 0.32px;
 }
 
+main {
+    display: flex;
+    padding: 24px;
+    align-items: flex-end;
+    flex: 1 0 0 ;
+    align-self: stretch;
+}
+
+#main-text {
+    display: flex;
+    flex-direction: column;
+    /* width: 326px; */
+    align-items: flex-start;
+    flex: 1 0 0;
+    justify-content: flex-end;
+    align-self: stretch;
+    gap: 16px;
+}
+
 footer {
     font-size: 10px;
     font-weight: var(--Ubuntu-Bold);
     letter-spacing: 0.3px;
     text-transform: uppercase;
+
+    display: flex;
+    justify-content: flex-end;
+    padding: 24px;
+    align-self: stretch;
 }
