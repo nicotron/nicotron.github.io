@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,24 +11,36 @@
     <link rel="stylesheet" href="style.css">
     <title>Nicolás Troncoso López</title>
 </head>
+
 <body>
     <header>
         <!-- a square that is a js -->
         <div id="square">
             <img src="img/square.png" alt="">
         </div>
-        <h3>Nicolás Troncoso López</h3>
+        <h3 class="example">Nicolás Troncoso López</h3>
     </header>
-    <main>
-        <div id="main-text">
+    <main class="row">
+        <div id="main-text" class="col-3">
             <h1>Archivo y<br>Actual</h1>
             <h3>software - docencia</h3>
             <p class="body-text">Archivos de imagen y video relacionados<br>a la práctica de escribir código. </p>
         </div>
-        <div><img src="img/home_md_843.png" alt="una letra C"></div>
+        <div class="col-9">
+        
+            <picture>
+                <source srcset="imagen-xl.jpg" media="(min-width: 1200px)">
+                <source srcset="imagen-lg.jpg" media="(min-width: 992px)">
+                <source srcset="imagen-md.jpg" media="(min-width: 768px)">
+                <source srcset="imagen-sm.jpg" media="(min-width: 600px)">
+                <img src="imagen-xs.jpg" alt="Descripción de la imagen">
+            </picture>
+        
+        </div>
     </main>
-<footer>
-    <p>© 2011-07-29</p>
-</footer>
+    <footer>
+        <p>© 2011-07-29</p>
+    </footer>
 </body>
+
 </html>

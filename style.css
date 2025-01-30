@@ -1,87 +1,150 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    /* Colores */
-    --white: #F0F0F0;
-    --dark:  #020303;
-    --dark_primary: var(--dark);
-    --light_primary: var(--white);
+  /* Colores */
+  --white: #f0f0f0;
+  --dark: #020303;
+  --dark_primary: var(--dark);
+  --light_primary: var(--white);
 
-    /* Fuentes */
-    --Font-Ubuntu:'Ubuntu';
-    --Ubuntu-Regular: 400;
-    --Ubuntu-Bold: 700;
+  /* Fuentes */
+  --Font-Ubuntu: "Ubuntu";
+  --Ubuntu-Regular: 400;
+  --Ubuntu-Bold: 700;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
+[class*="col-"] {
+  float: left;
+  /* padding: 15px; */
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .example {background: red;}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .example {background: green;}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {  width: 8.33%;  }
+  .col-2 {  width: 16.66%;  }
+  .col-3 {  width: 25%;  }
+  .col-4 {  width: 33.33%;  }
+  .col-5 {  width: 41.66%;  }
+  .col-6 {  width: 50%;  }
+  .col-7 {  width: 58.33%;  }
+  .col-8 {  width: 66.66%;  }
+  .col-9 {  width: 75%;  }
+  .col-10 {  width: 83.33%;  }
+  .col-11 {  width: 91.66%;  }
+  .col-12 {  width: 100%;  }
+  .example {background: blue;}
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .example {background: orange;}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .example {background: pink;}
+}
+
+
 h1 {
-    font-size: 64px;
-    font-weight: var(--Ubuntu-Bold);
-    letter-spacing: -0.64px;
+  font-size: 64px;
+  font-weight: var(--Ubuntu-Bold);
+  letter-spacing: -0.64px;
 }
 
 h3 {
-    font-size: 24px;
-    line-height: normal;
-    letter-spacing: -0.48px;
+  font-size: 24px;
+  line-height: normal;
+  letter-spacing: -0.48px;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
 body {
-    background-color: var(--light_primary);
-    color: var(--dark_primary);
-    font-family: var(--Font-Ubuntu);
-    font-weight: var(--Ubuntu-Regular);
+  background-color: var(--light_primary);
+  color: var(--dark_primary);
+  font-family: var(--Font-Ubuntu);
+  font-weight: var(--Ubuntu-Regular);
 }
 
 header {
-    display: flex;
-    align-items: center;
-    
-    & > h3 {
-        padding: 12px 24px;
-    }
+  display: flex;
+  align-items: center;
+
+  & > h3 {
+    padding: 12px 24px;
+  }
 }
 
 #square {
-    padding: 8px;
+  padding: 8px;
 }
 
 .body-text {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 140%; /* 22.4px */
-    letter-spacing: 0.32px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
+  letter-spacing: 0.32px;
 }
 
 main {
-    display: flex;
-    padding: 24px;
-    align-items: flex-end;
-    flex: 1 0 0 ;
-    align-self: stretch;
+  /* display: flex; */
+  padding: 24px;
+  /* align-items: flex-end; */
+  /* flex: 1 0 0; */
+  /* align-self: stretch; */
 }
 
 #main-text {
-    display: flex;
-    flex-direction: column;
-    /* width: 326px; */
-    align-items: flex-start;
-    flex: 1 0 0;
-    justify-content: flex-end;
-    align-self: stretch;
-    gap: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* flex: 1 1 4; */
+  /* justify-content: flex-end; */
+  /* align-self: stretch; */
+  gap: 16px;
+
 }
 
 footer {
-    font-size: 10px;
-    font-weight: var(--Ubuntu-Bold);
-    letter-spacing: 0.3px;
-    text-transform: uppercase;
+  font-size: 10px;
+  font-weight: var(--Ubuntu-Bold);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
 
-    display: flex;
-    justify-content: flex-end;
-    padding: 24px;
-    align-self: stretch;
+  display: flex;
+  justify-content: flex-end;
+  padding: 24px;
+  align-self: stretch;
 }
