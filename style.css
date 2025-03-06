@@ -16,14 +16,14 @@
   --Ubuntu-Regular: 400;
   --Ubuntu-Bold: 700;
 }
-.row::after {
+/* .row::after {
   content: "";
   clear: both;
   display: table;
-}
+} */
 
 [class*="col-"] {
-  float: left;
+  /* float: left; */
   /* padding: 15px; */
 }
 
@@ -32,13 +32,12 @@
   width: 100%;
 }
 
-@media only screen and (min-width: 768px) {
-  
-}
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .example {background: red;}
+  .row {
+    display: row;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -74,6 +73,15 @@
   .example {background: pink;}
 }
 
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1440px) {
+  .example {background: purple;}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1920px) {
+  .example {background: darkred;}
+}
 
 h1 {
   font-size: 64px;
@@ -91,6 +99,7 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 body {
   background-color: var(--light_primary);
   color: var(--dark_primary);
@@ -119,8 +128,9 @@ header {
 }
 
 main {
-  /* display: flex; */
+  display: flex;
   padding: 24px;
+  justify-content: space-between;
   /* align-items: flex-end; */
   /* flex: 1 0 0; */
   /* align-self: stretch; */
