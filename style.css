@@ -20,7 +20,6 @@
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {
     
-    main {background: rgb(210, 136, 0);}
     .container {
       display: flex;
       flex-direction: column-reverse;
