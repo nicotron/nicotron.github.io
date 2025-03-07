@@ -1,162 +1,141 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-:root {
-  /* Colores */
-  --white: #f0f0f0;
-  --dark: #020303;
-  --dark_primary: var(--dark);
-  --light_primary: var(--white);
+  :root {
+    /* Colores */
+    --white: #f0f0f0;
+    --dark: #020303;
+    --dark_primary: var(--dark);
+    --light_primary: var(--white);
 
-  /* Fuentes */
-  --Font-Ubuntu: "Ubuntu";
-  --Ubuntu-Regular: 400;
-  --Ubuntu-Bold: 700;
-}
-/* .row::after {
-  content: "";
-  clear: both;
-  display: table;
-} */
+    /* Fuentes */
+    --Font-Ubuntu: "Ubuntu";
+    --Ubuntu-Regular: 400;
+    --Ubuntu-Bold: 700;
+  }
 
-[class*="col-"] {
-  /* float: left; */
-  /* padding: 15px; */
-}
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+    
+    main {background: rgb(210, 136, 0);}
+    .container {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-end;
+      flex: 1 0 0;
+      align-self: stretch;
 
-/* For mobile phones: */
-[class*="col-"] {
-  width: 100%;
-}
+      justify-content: center;
+    }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  main {background: rgb(210, 136, 0);}
-  .container {
+    #main-text {
+      display: flex;
+      background-color: var(--white);
+      align-self: stretch;
+      align-items: stretch;
+    }
+
+    .hide-mobile {
+      display: none;
+    }
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .hide-mobile {
+      display: none;
+    }
+  }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    .hide-mobile {
+      display: flex;
+    }
+  } 
+
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1280px) {
+  }
+
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1440px) {
+  }
+
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1920px) {
+  }
+  /* ========================================================================== */
+
+  h1 {
+    font-size: 64px;
+    font-weight: var(--Ubuntu-Bold);
+    letter-spacing: -0.64px;
+  }
+
+  h3 {
+    font-size: 24px;
+    line-height: normal;
+    letter-spacing: -0.48px;
+  }
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+
+  body {
+    background-color: var(--light_primary);
+    color: var(--dark_primary);
+    font-family: var(--Font-Ubuntu);
+    font-weight: var(--Ubuntu-Regular);
+  }
+
+  header {
     display: flex;
-    flex-direction: column-reverse;
-    align-items: flex-end;
-    flex: 1 0 0;
-    align-self: stretch;
+    align-items: center;
 
-    justify-content: center;
+    & > h3 {
+      padding: 12px 24px;
+    }
   }
-}
 
-/* ========================================================================== */
-/* Small devices (portrait tablets and large phones, 600px and up)
-@media only screen and (min-width: 600px) {
-  .example {background: green;}
-}
+  #square {
+    padding: 8px;
+  }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  main {background: blue;}
-}
+  .body-text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%; /* 22.4px */
+    letter-spacing: 0.32px;
+  }
 
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
   main {
-    background: rgb(255, 166, 0);
+    display: flex;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-self: stretch;
   }
-  .example {background: var(--white);}
-} 
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1280px) {
-  main {background: rgb(206, 147, 37);}
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1440px) {
-  main {background: rgb(255, 193, 79);}
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1920px) {
-  main {background: rgb(255, 219, 151);}
-}
-/* ========================================================================== */
-
-h1 {
-  font-size: 64px;
-  font-weight: var(--Ubuntu-Bold);
-  letter-spacing: -0.64px;
-}
-
-h3 {
-  font-size: 24px;
-  line-height: normal;
-  letter-spacing: -0.48px;
-}
-
-img {
-  /* max-width: 100%; */
-  height: auto;
-  width: 100%;
-  /* max-width: 400px; */
-  /* height: auto; */
-}
-
-body {
-  background-color: var(--light_primary);
-  color: var(--dark_primary);
-  font-family: var(--Font-Ubuntu);
-  font-weight: var(--Ubuntu-Regular);
-}
-
-header {
-  display: flex;
-  align-items: center;
-
-  & > h3 {
-    padding: 12px 24px;
+  #main-text {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
-}
 
-#square {
-  padding: 8px;
-}
+  footer {
+    font-size: 10px;
+    font-weight: var(--Ubuntu-Bold);
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
 
-.body-text {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 140%; /* 22.4px */
-  letter-spacing: 0.32px;
-}
-
-main {
-  display: flex;
-  padding: 24px;
-  justify-content: space-between;
-  align-items: flex-end;
-  /* flex: 1 0 0; */
-  align-self: stretch;
-}
-
-#main-text {
-  /* display: flex; */
-  flex-direction: column;
-  align-items: flex-start;
-  /* flex: 1 1 4; */
-  /* justify-content: flex-end; */
-  /* align-self: stretch; */
-  gap: 16px;
-
-}
-
-footer {
-  font-size: 10px;
-  font-weight: var(--Ubuntu-Bold);
-  letter-spacing: 0.3px;
-  text-transform: uppercase;
-
-  display: flex;
-  justify-content: flex-end;
-  padding: 24px;
-  align-self: stretch;
-}
+    display: flex;
+    justify-content: flex-end;
+    padding: 24px;
+    align-self: stretch;
+  }
