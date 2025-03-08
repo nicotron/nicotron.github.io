@@ -37,8 +37,14 @@
       align-items: stretch;
     }
 
+    h1 {
+      font-size: 24px;
+      letter-spacing: -0.48px;
+      line-height: normal;
+    }
+
     .hide-mobile {
-      display: none;
+      /* display: none; */
     }
   }
 
@@ -70,9 +76,10 @@
   /* ========================================================================== */
 
   h1 {
-    font-size: 64px;
+    font-size: 4rem;
     font-weight: var(--Ubuntu-Bold);
-    letter-spacing: -0.64px;
+    letter-spacing: -0.04em;
+    line-height: 1.2;
   }
 
   h3 {
