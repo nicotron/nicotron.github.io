@@ -1,140 +1,197 @@
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+/* 1. VARIABLES Y CONFIGURACIÓN
+------------------------------------------------- */
+:root {
+  /* Colores */
+  --color-white: #f0f0f0; 
+  --color-white_2: #FCFCFC;
+  --color-white_3: #F6F7F9;
+  --color-black: #020303;
+  --color-black_1: #16191D;
+  --color-black_2: #2E3338;
 
-  :root {
-    /* Colores */
-    --white: #f0f0f0;
-    --dark: #020303;
-    --dark_primary: var(--dark);
-    --light_primary: var(--white);
+  --color-light-primary: var(--color-white);
+  --color-light-secondary: var(--color-white_1);
+  --color-light-tertiary: var(--color-white_@);
+  --color-dark-primary: var(--color-black);
+  --color-dark-secondary: var(--color-black_1);
+  --color-dark-tertiary: var(--color-black_2);
+  
+  --color-background: var(--color-white);
 
-    /* Fuentes */
-    --Font-Ubuntu: "Ubuntu";
-    --Ubuntu-Regular: 400;
-    --Ubuntu-Bold: 700;
-  }
+  /* Tipografía */
+  --font-primary: "Ubuntu";
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
 
-  /* Extra small devices (phones, 600px and down) */
-  @media only screen and (max-width: 600px) {
-    
-    .container {
-      display: flex;
-      flex-direction: column-reverse;
-      align-items: flex-end;
-      flex: 1 0 0;
-      align-self: stretch;
+  /* Espaciado (1rem = 16px) */
+  --spacing-xs: 0.5rem;    /* 8px */
+  --spacing-sm: 0.75rem;   /* 12px */
+  --spacing-md: 1rem;      /* 16px */
+  --spacing-lg: 1.5rem;    /* 24px */
 
-      justify-content: center;
-    }
+  /* Tamaños de fuente */
+  --text-xs: 0.625rem;     /* 10px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;        /* 16px */
+  --text-lg: 1.5rem;        /* 24px */
+  --text-xl: 2rem;          /* 32px */
+  --text-2xl: 2.5rem;       /* 40px */
+  --text-3xl: 4rem;         /* 64px */
 
-    #main-text {
-      display: flex;
-      background-color: var(--white);
-      align-self: stretch;
-      align-items: stretch;
-    }
+  /* Breakpoints */
+  --breakpoint-tablet: 48rem;    /* 768px */
+  --breakpoint-desktop: 62rem;     /* 992px */
+  --breakpoint-large: 75rem;       /* 1200px */
+}
 
-    .hide-mobile {
-      display: none;
-    }
-  }
+/* 2. RESET Y ESTILOS BASE
+------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  /* Medium devices (landscape tablets, 768px and up) */
-  @media only screen and (min-width: 768px) {
-    .hide-mobile {
-      display: none;
-    }
-  }
+html {
+  font-size: 16px;
+}
 
-  /* Large devices (laptops/desktops, 992px and up) */
-  @media only screen and (min-width: 992px) {
-    .hide-mobile {
-      display: flex;
-    }
-  } 
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-light-primary);
+  color: var(--color-dark-primary);
+}
 
-  /* Extra large devices (large laptops and desktops, 1200px and up) */
-  @media only screen and (min-width: 1280px) {
-  }
+img {
+  max-width: 100%;
+  height: auto;
+}
 
-  /* Extra large devices (large laptops and desktops, 1200px and up) */
-  @media only screen and (min-width: 1440px) {
-  }
+/* 3. TIPOGRAFÍA (Mobile First)
+------------------------------------------------- */
+h1 {
+  font-size: var(--text-xl);         /* 32px en móvil */
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
 
-  /* Extra large devices (large laptops and desktops, 1200px and up) */
-  @media only screen and (min-width: 1920px) {
-  }
-  /* ========================================================================== */
+h3 {
+  font-size: var(--text-lg);         /* 24px en móvil */
+  line-height: normal;
+}
 
+.body-text {
+  font-size: var(--text-base);        /* 16px */
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+/* 4. LAYOUTS
+------------------------------------------------- */
+.container {
+  width: 100%;
+  padding: 0 var(--spacing-sm);
+  margin: 0 auto;
+}
+
+/* 5. COMPONENTES
+------------------------------------------------- */
+/* 5.1 Header */
+header {
+  display: flex;
+  flex-direction: row-reverse;     /* Mobile: contenido primero, imagen después */
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-sm);
+}
+
+/* 5.2 Main */
+main {
+  display: flex;
+  flex-direction: column-reverse;     /* Mobile: contenido primero, imagen después */
+  padding: var(--spacing-md);
+  gap: var(--spacing-md);
+}
+
+#main-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+#square {
+  width: 2.5rem;                      /* 40px */
+  padding: var(--spacing-xs);
+}
+
+.hide__mobile {
+  display: none;
+}
+
+/* 5.3 Footer */
+footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--spacing-md);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+}
+
+/* 6. MEDIA QUERIES
+------------------------------------------------- */
+/* Tablet (768px / 48rem) */
+@media (min-width: 48rem) {
+  /* Tipografía */
   h1 {
-    font-size: 64px;
-    font-weight: var(--Ubuntu-Bold);
-    letter-spacing: -0.64px;
+    font-size: var(--text-2xl);     /* 40px en tablet */
   }
 
-  h3 {
-    font-size: 24px;
-    line-height: normal;
-    letter-spacing: -0.48px;
+  /* Layout */
+  .container {
+    padding: 0 var(--spacing-md);
   }
 
-  img {
-    height: auto;
-    width: 100%;
-  }
-
-  body {
-    background-color: var(--light_primary);
-    color: var(--dark_primary);
-    font-family: var(--Font-Ubuntu);
-    font-weight: var(--Ubuntu-Regular);
-  }
-
-  header {
-    display: flex;
-    align-items: center;
-
-    & > h3 {
-      padding: 12px 24px;
-    }
+  /* Componentes */
+  main {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: var(--spacing-lg);
   }
 
   #square {
-    padding: 8px;
+    width: 3rem;                    /* 48px */
+  }
+}
+
+/* Desktop (992px / 62rem) */
+@media (min-width: 62rem) {
+  /* Tipografía */
+  h1 {
+    font-size: var(--text-3xl);     /* 64px en desktop */
   }
 
-  .body-text {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 140%; /* 22.4px */
-    letter-spacing: 0.32px;
+  /* Layout */
+  .container {
+    max-width: 75rem;               /* 1200px */
   }
 
-  main {
+  /* Componentes */
+  header {
+    padding: var(--spacing-lg);
+  }
+
+  #square {
+    width: 4rem;                    /* 64px */
+  }
+}
+
+/* Large Desktop (1200px / 75rem) */
+@media (min-width: 75rem) {
+  body {
     display: flex;
-    padding: 24px;
-    justify-content: space-between;
-    align-items: flex-end;
-    align-self: stretch;
+    justify-content: center;
   }
-
-  #main-text {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  footer {
-    font-size: 10px;
-    font-weight: var(--Ubuntu-Bold);
-    letter-spacing: 0.3px;
-    text-transform: uppercase;
-
-    display: flex;
-    justify-content: flex-end;
-    padding: 24px;
-    align-self: stretch;
-  }
+}
