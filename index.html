@@ -13,37 +13,34 @@
 </head>
 
 <body>
-    <header>
-        <!-- a square that is a js -->
-        <div id="square">
+    <header class="header">
+        <div class="header__logo">
             <img src="img/square.png" alt="Logo">
         </div>
-        <h3 id="header__title">Nicolás Troncoso López</h3>
+        <h3 class="header__title">Nicolás Troncoso López</h3>
     </header>
-    <main class="container">
-        <div id="main__title">
-            <h1>Archivo y <br class="hide__mobile">Actual</h1>
-            <h3>software - docencia</h3>
-            <p class="body__text">
-                Archivos de imagen y video relacionados<br class="hide__mobile">
-                a la práctica de escribir código.
+    <main class="hero">
+        <div class="hero__content">
+            <h1 class="hero__title">Archivo y <br class="hide-mobile">Actual</h1>
+            <h3 class="hero__subtitle">software - docencia</h3>
+            <p class="hero__text">
+                Archivos de imagen y video relacionados
+                <br class="hide-mobile">a la práctica de escribir código.
             </p>
         </div>
-    <!-- imagen -->
-        <div class="main__image">
-        
+        <div class="hero__image">
             <picture>
-                <source srcset="img/home/home_hd.png" media="(min-width: 1920px)">
-                <source srcset="img/home/home_xxl.png" media="(min-width: 1440px)">
-                <source srcset="img/home/home_xl.png" media="(min-width: 1280px)">
-                <source srcset="img/home/home_lg.png" media="(min-width: 992px)">
-                <img src="img/home/home_sm.png" alt="Imagen principal">
+                <source srcset="img/home/home_2xxl.png" media="(min-width: 120rem)"> <!-- 1920px -->
+                <source srcset="img/home/home_xxl.png" media="(min-width: 90rem)"> <!-- 1440px -->
+                <source srcset="img/home/home_xl.png" media="(min-width: 80rem)"> <!-- 1280px -->
+                <source srcset="img/home/home_lg.png" media="(min-width: 62rem)"> <!-- 992px -->
+                <source srcset="img/home/home_md.png" media="(min-width: 48rem)"> <!-- 768px -->
+                <img src="img/home/home_sm.png" alt="Imagen principal"> <!-- <768px -->
             </picture>
-
         </div>
     </main>
-    <footer>
-        <p>© 2011-07-29</p>
+    <footer class="footer">
+        <p class="footer__copyright">© 2011-2024</p>
     </footer>
 </body>
 
