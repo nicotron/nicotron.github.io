@@ -99,17 +99,25 @@ img {
   font-size: var(--text-lg);
 }
 
-/* --breakpoint-sm */
+/* --breakpoint-sm  tablet 768 */
 @media (min-width: 48rem) {
   .header {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    padding: var(--spacing-sm);
+    /* padding: var(--spacing-xs); */
+  }
+
+  .header__logo {
+    padding: var(--spacing-xs);
+  }
+
+  .header__title {
+    padding: var(--spacing-xs) 0px;
   }
 }
 
-/* --breakpoint--md */
+/* --breakpoint--md desktop 992 */
 @media (min-width: 62rem) {
   .header {
     padding: var(--spacing-lg);
