@@ -140,7 +140,7 @@ img {
 
 .hero__text {
   font-size: var(--p-mobile);
-  line-height: 1.4;
+  line-height: var(--line-height-p);
   letter-spacing: 0.02em;
 }
 
