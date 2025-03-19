@@ -51,7 +51,7 @@
   
   --p-mobile: var(--text-base);    /* 16px */
   --p-tablet: var(--text-lg-18);      /* 18px */
-  --p-desktop: var(--text-lg-20);     /* 20px - ahora usando text-xl */
+  --p-desktop: var(--text-lg-20);     /* 20px */
   
   /* Breakpoints */
   --breakpoint-sm: 48rem;     /* 768px  - Tablet */
@@ -105,7 +105,6 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    /* padding: var(--spacing-xs); */
   }
 
   .header__logo {
@@ -114,13 +113,6 @@ img {
 
   .header__title {
     padding: var(--spacing-xs) 0px;
-  }
-}
-
-/* --breakpoint--md desktop 992 */
-@media (min-width: 62rem) {
-  .header {
-    padding: var(--spacing-lg);
   }
 }
 
@@ -136,7 +128,6 @@ img {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
-  /* gap: var(--spacing-md); */
 }
 
 .hero__title {
