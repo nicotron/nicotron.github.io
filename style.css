@@ -93,6 +93,7 @@ body {
 img {
   max-width: 100%;
   height: auto;
+  object-fit: scale-down;
 }
 
 /* 3. BLOQUE: HEADER
@@ -131,6 +132,13 @@ img {
   }
 }
 
+/* --breakpoint-xxl 1920 */
+@media (min-width: 120rem) {
+  .header {
+    margin-top: 40px;
+  }
+}
+
 /* 4. BLOQUE: HERO
 ------------------------------------------------- */
 .hero {
@@ -166,8 +174,8 @@ img {
   display: flex;
   justify-content: center;
 }
-  
-@media (min-width: 48rem) {
+/* 992px  - Desktop */ 
+@media (min-width: 62rem) {
   .hero {
     flex-direction: row;
     justify-content: space-between;
