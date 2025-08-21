@@ -9,18 +9,19 @@
   --color-black_1: #16191D;
   --color-black_2: #2E3338;
 
+  /* Variables de colores light */
   --color-light-primary: var(--color-white);
   --color-light-secondary: var(--color-white_1);
   --color-light-tertiary: var(--color-white_2);
+  
+  /* Variables de colores dark */
   --color-dark-primary: var(--color-black);
   --color-dark-secondary: var(--color-black_1);
   --color-dark-tertiary: var(--color-black_2);
   
   --color-background: var(--color-white);
-
   
-  /* Sistema Tipográfico
-  ------------------------- */
+  /* Sistema Tipográfico ----------------------- */
   /* Familia tipográfica */
   --font-primary: "Ubuntu";
   --font-weight-regular: 400;
@@ -38,23 +39,8 @@
   --text-5xl: 3rem;        /* 48px */
   --text-6xl: 4rem;        /* 64px */
 
-  /* Line heights */
-  --leading-none: 1;
-  --leading-tight: 1.25;
-  --leading-snug: 1.375;
-  --leading-normal: 1.5;
-  --leading-relaxed: 1.625;
-  --leading-loose: 2;
-
-  /* Letter spacing */
-  --tracking-tighter: -0.05em;
-  --tracking-tight: -0.025em;
-  --tracking-normal: 0em;
-  --tracking-wide: 0.025em;
-  --tracking-wider: 0.05em;
-
   /* Variables semánticas responsivas */
-  --h1-mobile: var(--text-3xl);    /* 32px */
+  --h1-mobile: var(--text-2xl);    /* 24px */
   --h1-tablet: var(--text-4xl);    /* 40px */
   --h1-desktop: var(--text-6xl);   /* 64px */
   
@@ -69,6 +55,21 @@
   --p-mobile: var(--text-base);    /* 16px */
   --p-tablet: var(--text-lg);      /* 18px */
   --p-desktop: var(--text-xl);     /* 20px */
+
+  /* Line heights */
+  --leading-none: 1;        /* 16px  */
+  --leading-tight: 1.25;    /* 20px  */
+  --leading-snug: 1.375;    /* 22px  */
+  --leading-normal: 1.5;    /* 24px  */
+  --leading-relaxed: 1.625; /* 26px  */
+  --leading-loose: 2;       /* 32px  */
+
+  /* Letter spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
   
   /* Espaciado */
   --spacing-xs: 0.5rem;    /* 8px */
@@ -84,7 +85,6 @@
   --breakpoint-lg: 80rem;     /* 1280px - Large Desktop */
   --breakpoint-xl: 90rem;     /* 1440px - Extra Large */
   --breakpoint-xxl: 120rem;   /* 1920px - HD/4K */
-
 }
 
 /* 2. RESET
@@ -100,7 +100,6 @@ body {
   font-size: var(--text-base);
   line-height: var(--leading-normal);
   background-color: var(--color-light-tertiary);
-  /* background-color: var(--color-dark-tertiary); */
   color: var(--color-dark-primary);
 }
 
@@ -113,43 +112,39 @@ img {
 ------------------------------------------------- */
 h1 {
   font-size: var(--h1-mobile);
-  line-height: var(--leading-none);
-  letter-spacing: var(--tracking-tight);
-  margin-bottom: var(--spacing-xs);
   font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-none);
 }
 
 h2 {
   font-size: var(--h2-mobile);
-  line-height: var(--leading-none);
+  font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-normal);
-  margin-bottom: var(--spacing-xs);
-  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-none);
 }
 
 h3 {
   font-size: var(--h3-mobile);
-  line-height: var(--leading-none);
+  font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-normal);
-  margin-bottom: var(--spacing-xs);
-  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-none);
 }
 
 p {
   font-size: var(--p-mobile);
-  line-height: var(--leading-none);
   letter-spacing: var(--tracking-normal);
-  margin-bottom: var(--spacing-xs);
-  max-width: 75ch;
+  line-height: var(--leading-none);
+  /* max-width: 75ch; */
 }
 
 /* 4. BLOQUE: HEADER
 ------------------------------------------------- */
 .header {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: space-between;
-  padding: var(--spacing-xs);
+  align-items: center;
 }
 
 .header__logo {
@@ -157,8 +152,7 @@ p {
 }
 
 .header__title {
-  font-size: var(--text-2xl);
-  padding: var(--spacing-xs) var(--spacing-xs);
+  padding: var(--spacing-xs);
 }
 
 /* --breakpoint-sm  tablet 768 */
@@ -167,7 +161,6 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    /* padding: var(--spacing-xs); */
   }
 
   .header__logo {
@@ -193,14 +186,14 @@ p {
   flex-direction: column;
   flex: 1 1 0;
   width: 100%;
-  padding: var(--spacing-sm); /* Aumentamos el padding para mejor espaciado */
-  gap: var(--spacing-md); /* Añadimos un espacio entre la imagen y el texto */ 
+  align-items: center;
 }
 
 .hero__content {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
+  padding: 0px var(--spacing-xs);
 }
 
 .hero__title {
@@ -221,12 +214,10 @@ p {
 }
 
 .hero__image {
-  background-color: var(--color-black_2);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: var(--spacing-md);
 }
   
 .hero__image img {
@@ -249,23 +240,9 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.019em;
   color: var(--color-white); /* Hacemos la letra blanca para que se vea sobre el fondo oscuro */
-}
-
-/* @media (min-width: 48rem) {
-  .hero {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: var(--spacing-lg);
-  }
-
-  .hero__title {
-    font-size: var(--text-2xl);
-  }
-} */
+} 
 
 /* --breakpoint-md  desktop 992 */
-/* ------------------------------------------------- */
 @media (min-width: 62rem) {
   .hero {
     /* Aquí cambiamos a 'row' para que el texto y la imagen se alineen horizontalmente */
@@ -350,22 +327,3 @@ p {
     max-width: var(--breakpoint-xxl);
   }
 }
-
-/* 8. UTILIDADES
-------------------------------------------------- */
-.hide-mobile {
-  display: none;
-}
-
-@media (min-width: 62rem) {
-  .hide-mobile {
-    display: inline;
-  }
-}
-
-/* @media (min-width: 75rem) {
-  body {
-    display: flex;
-    justify-content: center;
-  }
-} */
