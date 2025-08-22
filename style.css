@@ -2,22 +2,22 @@
 ------------------------------------------------- */
 :root {
   /* Colores */
-  --color-white: #f0f0f0; 
+  --color-white_1: #f0f0f0; 
   --color-white_2: #FCFCFC;
   --color-white_3: #F6F7F9;
-  --color-black: #020303;
-  --color-black_1: #16191D;
-  --color-black_2: #2E3338;
+  --color-black_1: #020303;
+  --color-black_2: #16191D;
+  --color-black_3: #2E3338;
 
   /* Variables de colores light */
-  --color-light-primary: var(--color-white);
-  --color-light-secondary: var(--color-white_1);
-  --color-light-tertiary: var(--color-white_2);
+  --color-light-primary: var(--color-white_1);
+  --color-light-secondary: var(--color-white_2);
+  --color-light-tertiary: var(--color-white_3);
   
   /* Variables de colores dark */
-  --color-dark-primary: var(--color-black);
-  --color-dark-secondary: var(--color-black_1);
-  --color-dark-tertiary: var(--color-black_2);
+  --color-dark-primary: var(--color-black_1);
+  --color-dark-secondary: var(--color-black_2);
+  --color-dark-tertiary: var(--color-black_3);
   
   --color-background: var(--color-white);
   
@@ -153,6 +153,108 @@ p {
 
 .header__title {
   padding: var(--spacing-xs);
+}
+
+/* menu hamburger */
+/* Estilo del botón */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  width: 48px;
+  height: 45px;
+  background-color: var(--color-light-tertiary);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Estilo de las líneas de la hamburguesa */
+.line {
+  width: 18px;
+  height: 2px;
+  background-color: var(--color-dark-primary);
+  /* border-radius: 0.5rem; */
+  /* transition: transform 0.3s ease-in-out; */
+}
+
+/* Estado activo: Animación del botón cuando se abre el menú */
+.menu-toggle.is-active {
+  background-color: var(--color-dark-primary);
+  .line {
+    background-color: var(--color-light-tertiary);
+  }
+}
+
+.menu-toggle.is-active .line:first-child {
+  transform:translateY(5px) rotate(45deg);
+}
+
+.menu-toggle.is-active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.is-active .line:last-child {
+  transform: translateY(-4.5px) rotate(-45deg);
+}
+
+/* Menu */
+/* Estilos iniciales del menú (oculto) */
+.main-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /* Ocultamos el menú por defecto */
+  transform: translateY(-100%);
+  /* transition: transform 0.3s ease-in-out; */
+  /* Alineamos los elementos del menú */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;      /* Cambia de center a flex-start */
+  padding-top: var(--spacing-2xl); /* Añade separación superior (48px) */
+  z-index: 999;
+}
+
+/* Estilo para el estado visible del menú */
+.main-menu.is-active {
+  transform: translateY(0);
+}
+
+.main-menu__list {
+  list-style: none;
+  padding: var(--spacing-md);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg); /* Espacio entre botones */
+  text-align: center;
+  background-color: var(--color-white_2); /* Fondo blanco */
+}
+
+.main-menu__item a {
+  display: block;
+  /* width: 100%; */
+  box-sizing: border-box;
+  /* padding: var(--spacing-md) 0; Espaciado vertical, puedes ajustar */
+  color: var(--color-dark-primary);
+  /* font-size: var(--h3-mobile); */
+  text-decoration: none;
+  text-transform: uppercase; /* Letras en mayúsculas */
+  /* transition: color 0.2s ease-in-out; */
+}
+
+.main-menu__item a.is-active,
+.main-menu__item a:active {
+  text-decoration: underline; /* Subrayado en activo */
+}
+
+.main-menu__item a:hover {
+  color: var(--color-dark-tertiary);
 }
 
 /* --breakpoint-sm  tablet 768 */
