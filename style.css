@@ -201,7 +201,6 @@ p {
   left: 0;
   width: 100%; /* Ocupa todo el ancho de la pantalla */
   height: 100vh;
-  /* Ocultamos el menú por defecto */
   background-color: var(--color-light-primary);
   transform: translateY(-100%);
   display: flex;
@@ -280,14 +279,10 @@ p {
 
 .hero__image {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .hero__image img {
-  /* La propiedad 'width' al 100% y 'height' auto
-  permiten que la imagen se adapte al contenedor sin distorsionarse. */
   width: 100%;
   height: auto;
   object-fit: contain;

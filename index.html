@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,10 +13,21 @@
 <body>
     <header class="header">
         <h1 class="header__title">Nicolás Troncoso López</h1>
-        <div class="header__logo">
-            <img src="img/square.png" alt="Logo">
-        </div>
+        <button class="menu-toggle" aria-controls="main-menu" aria-expanded="false">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
     </header>
+    <nav id="main-menu" class="main-menu">
+        <ul class="main-menu__list">
+            <li class="main-menu__item"><a href="index.html" class="is-active">inicio</a></li>
+            <li class="main-menu__item"><a href="#">acerca</a></li>
+            <li class="main-menu__item"><a href="#">trabajo</a></li>
+            <li class="main-menu__item"><a href="#">contacto</a></li>
+        </ul>
+    </nav>
+    <!-- <img src="img/square.png" alt="Logo"> -->
     <main class="hero">
         <section class="hero__image">
             <picture>
@@ -31,7 +40,7 @@
             </picture>
         </section>
         <section class="hero__content">
-            <h1 class="hero__title">Archivo Actual</h1>
+            <h2 class="hero__title">Archivo Actual</h2>
             <h2 class="hero__subtitle">software - docencia</h2>
             <p class="hero__text">
                 Archivos de imagen y video relacionados a la práctica de escribir código.
@@ -41,6 +50,7 @@
     <footer class="footer">
         <p class="footer__copyright">© 2011-2024</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
