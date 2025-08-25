@@ -135,7 +135,6 @@ p {
   font-size: var(--p-mobile);
   letter-spacing: var(--tracking-normal);
   line-height: var(--leading-none);
-  /* max-width: 75ch; */
 }
 
 /* 4. BLOQUE: HEADER
@@ -145,18 +144,14 @@ p {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: var(--spacing-sm);
 }
 
 .header__logo {
   padding: var(--spacing-md);
 }
 
-.header__title {
-  padding: var(--spacing-xs);
-}
-
 /* menu hamburger */
-/* Estilo del botón */
 .menu-toggle {
   display: flex;
   flex-direction: column;
@@ -169,28 +164,26 @@ p {
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  z-index: 1000;
 }
 
-/* Estilo de las líneas de la hamburguesa */
 .line {
   width: 18px;
   height: 2px;
   background-color: var(--color-dark-primary);
-  /* border-radius: 0.5rem; */
-  /* transition: transform 0.3s ease-in-out; */
+  transition: transform 0.13s ease-in-out;
 }
 
-/* Estado activo: Animación del botón cuando se abre el menú */
 .menu-toggle.is-active {
   background-color: var(--color-dark-primary);
-  .line {
-    background-color: var(--color-light-tertiary);
-  }
+}
+
+.menu-toggle.is-active .line {
+  background-color: var(--color-light-tertiary);
 }
 
 .menu-toggle.is-active .line:first-child {
-  transform:translateY(5px) rotate(45deg);
+  transform: translateY(5px) rotate(45deg);
 }
 
 .menu-toggle.is-active .line:nth-child(2) {
@@ -202,117 +195,87 @@ p {
 }
 
 /* Menu */
-/* Estilos iniciales del menú (oculto) */
 .main-menu {
-  position: fixed;
+ position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
   height: 100vh;
   /* Ocultamos el menú por defecto */
+  background-color: var(--color-light-primary);
   transform: translateY(-100%);
-  /* transition: transform 0.3s ease-in-out; */
-  /* Alineamos los elementos del menú */
   display: flex;
   justify-content: center;
-  align-items: flex-start;      /* Cambia de center a flex-start */
-  padding-top: var(--spacing-2xl); /* Añade separación superior (48px) */
+  align-items: flex-start;
+  padding-top: 58px;
   z-index: 999;
 }
 
-/* Estilo para el estado visible del menú */
 .main-menu.is-active {
   transform: translateY(0);
 }
 
 .main-menu__list {
   list-style: none;
-  padding: var(--spacing-md);
-  margin: 0;
+  /* padding: 0;  */
+  /* margin: 0; */
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg); /* Espacio entre botones */
+  gap: 8px;
+  width: 100%;
   text-align: center;
-  background-color: var(--color-white_2); /* Fondo blanco */
+}
+
+.main-menu__item {
+  width: 100%; /* Cada ítem ocupa el 100% del ancho de la lista */
 }
 
 .main-menu__item a {
   display: block;
-  /* width: 100%; */
+  width: 100%;
   box-sizing: border-box;
-  /* padding: var(--spacing-md) 0; Espaciado vertical, puedes ajustar */
-  color: var(--color-dark-primary);
-  /* font-size: var(--h3-mobile); */
+  padding: var(--spacing-sm);
+  color: var(--color-dark-secondary);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.02rem;
+  text-transform: uppercase;
   text-decoration: none;
-  text-transform: uppercase; /* Letras en mayúsculas */
-  /* transition: color 0.2s ease-in-out; */
+  transition: background 0.13s;
 }
 
 .main-menu__item a.is-active,
 .main-menu__item a:active {
-  text-decoration: underline; /* Subrayado en activo */
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
 }
 
 .main-menu__item a:hover {
-  color: var(--color-dark-tertiary);
-}
-
-/* --breakpoint-sm  tablet 768 */
-@media (min-width: 48rem) {
-  .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-  }
-
-  .header__logo {
-    padding: var(--spacing-xs);
-  }
-
-  .header__title {
-    padding: var(--spacing-xs) 0px;
-  }
-}
-
-/* --breakpoint--md desktop 992 */
-@media (min-width: 62rem) {
-  .header {
-    padding: var(--spacing-lg);
-  }
+  background-color: var(--color-dark-tertiary);
+  color: var(--color-light-tertiary);
 }
 
 /* 5. BLOQUE: HERO
 ------------------------------------------------- */
 .hero {
   display: flex;
-  flex-direction: column;
-  flex: 1 1 0;
-  width: 100%;
-  align-items: center;
+  flex-direction: column; /* Revertimos el orden para móviles */
+  gap: var(--spacing-md);
 }
 
 .hero__content {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs);
-  padding: 0px var(--spacing-xs);
-}
-
-.hero__title {
-  font-size: var(--h1-mobile);
-  line-height: var(--line-height-title);
-}
-
-.hero__subtitle {
-  font-size: var(--h2-mobile);
-  font-weight: var(--font-weight-regular);
-  line-height: var(--line-height-title);
+  padding: var(--spacing-xs);
+  /* gap: var(--spacing-xs); */
 }
 
 .hero__text {
-  font-size: var(--p-mobile);
-  line-height: var(--line-height-body);
-  letter-spacing: 0.02em;
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-normal);
 }
 
 .hero__image {
@@ -321,44 +284,13 @@ p {
   justify-content: center;
   align-items: center;
 }
-  
+
 .hero__image img {
   /* La propiedad 'width' al 100% y 'height' auto
   permiten que la imagen se adapte al contenedor sin distorsionarse. */
   width: 100%;
   height: auto;
-  object-fit: contain; /* Asegura que la imagen se ajuste dentro de su contenedor */
-}
-
-.hero_label {
-  display: flex;
-  justify-content: flex-end;
-  padding: var(--spacing-md);
-}
-
-.hero_caption {
-  font-size: var(--text-xs);
-  font-weight: var(--font-weight-bold);
-  text-transform: uppercase;
-  letter-spacing: 0.019em;
-  color: var(--color-white); /* Hacemos la letra blanca para que se vea sobre el fondo oscuro */
-} 
-
-/* --breakpoint-md  desktop 992 */
-@media (min-width: 62rem) {
-  .hero {
-    /* Aquí cambiamos a 'row' para que el texto y la imagen se alineen horizontalmente */
-    flex-direction: row;
-    justify-content: center; /* Centramos el contenido horizontalmente */
-    align-items: center; /* Alineamos verticalmente el contenido */
-    padding: var(--spacing-lg);
-  }
-
-  .hero__content {
-    /* Establecemos un ancho fijo para el contenido de texto */
-    max-width: 270px;
-    width: auto;
-  }
+  object-fit: contain;
 }
 
 /* 6. BLOQUE: FOOTER
@@ -376,21 +308,17 @@ p {
   letter-spacing: var(--tracking-wider);
 }
 
-@media (min-width: 48rem) {
-  .footer {
-    padding: var(--spacing-lg);
-  }
-}
-
 /* 7. MEDIA QUERIES
 ------------------------------------------------- */
 /* Tablet (768px) */
 @media (min-width: 48rem) {
+  /* Reglas de tipografía responsivas */
   h1 { font-size: var(--h1-tablet); }
   h2 { font-size: var(--h2-tablet); }
   h3 { font-size: var(--h3-tablet); }
   p { font-size: var(--p-tablet); }
 
+  /* Ajustes de bloques */
   .hero {
     flex-direction: row;
     justify-content: space-between;
@@ -399,33 +327,53 @@ p {
   }
 
   .header {
-    flex-direction: row;
     justify-content: flex-start;
+    padding: var(--spacing-lg);
+  }
+
+  .footer {
     padding: var(--spacing-lg);
   }
 }
 
 /* Desktop (992px) */
 @media (min-width: 62rem) {
+  /* Reglas de tipografía responsivas */
   h1 { font-size: var(--h1-desktop); }
   h2 { font-size: var(--h2-desktop); }
   h3 { font-size: var(--h3-desktop); }
   p { font-size: var(--p-desktop); }
 
-  .container {
-    max-width: var(--breakpoint-xl);
-    margin: 0 auto;
-  }
-}
-
-/* Large screens (1920px) */
-@media (min-width: 120rem) {
-  body {
-    display: flex;
+  /* Ajustes de bloques */
+  .hero {
+    align-items: center;
     justify-content: center;
   }
   
-  .container {
-    max-width: var(--breakpoint-xxl);
+  .hero__content {
+    max-width: 270px;
+    width: auto;
+    padding: 0 var(--spacing-md) 0 0;
+  }
+
+  .main-menu {
+    position: static;
+    transform: none;
+    height: auto;
+    background: none;
+    display: block;
+  }
+
+  .main-menu.is-active {
+    transform: none;
+  }
+
+  .main-menu__list {
+    flex-direction: row;
+    background: none;
+  }
+
+  .main-menu__item a {
+    color: var(--color-dark-primary);
   }
 }
