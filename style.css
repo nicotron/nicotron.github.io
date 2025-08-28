@@ -137,6 +137,16 @@ p {
   line-height: var(--leading-none);
 }
 
+.paragraph__lora {
+  font-family: Lora;
+  font-size: var(--p-desktop);
+  font-style: normal;
+  font-weight: var(--font-weight-regular);
+  line-height: var(--leading-relaxed) 
+
+  text-align: justify;
+}
+
 /* 4. BLOQUE: HEADER
 ------------------------------------------------- */
 .header {
@@ -222,39 +232,52 @@ p {
   flex-direction: column;
   gap: 8px;
   width: 100%;
-  text-align: center;
 }
 
 .main-menu__item {
   width: 100%; /* Cada ítem ocupa el 100% del ancho de la lista */
 }
 
-.main-menu__item a {
-  display: block;
+.main-menu__item, .call-to-action__link {
+  /* Propiedades de Layout / Modelo de Caja */
   width: 100%;
   box-sizing: border-box;
-  padding: var(--spacing-sm);
+  padding: var(--spacing-md);
+
+  /* Propiedades Visuales */
+  background-color: var(--color-light-secondary);
   color: var(--color-dark-secondary);
+
+  /* Propiedades de Texto y Fuente */
   font-size: 1rem;
-  font-style: normal;
+  font-style: var(--font-weight-bold);
   font-weight: 700;
-  line-height: normal;
+  text-align: center;
   letter-spacing: 0.02rem;
   text-transform: uppercase;
   text-decoration: none;
+
+  /* Propiedades de Transición */
   transition: background 0.13s;
 }
 
-.main-menu__item a.is-active,
-.main-menu__item a:active {
+.call-to-action {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  width: 100%;
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+a.main-menu__item {
+  display: block; /* Hace que el enlace ocupe todo el espacio del li */
+}
+
+a.is-active {
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 2px;
-}
-
-.main-menu__item a:hover {
-  background-color: var(--color-dark-tertiary);
-  color: var(--color-light-tertiary);
 }
 
 /* 5. BLOQUE: HERO
