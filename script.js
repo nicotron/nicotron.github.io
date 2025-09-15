@@ -24,8 +24,29 @@ menuLinks.forEach(link => {
     // Remueve las clases para cerrar el menú
     menuToggle.classList.remove('is-active');
     mainMenu.classList.remove('is-active');
+// Espera a que el DOM esté completamente cargado
+document.addEventListener("DOMContentLoaded", () => {
+  // --- FUNCIONALIDAD DEL MENÚ ---
+  // Obtiene elementos del menú
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mainMenu = document.getElementById("main-menu");
+  const menuLinks = document.querySelectorAll(".main-menu__item a");
 
+  // Función para alternar el estado del menú
+  const toggleMenu = () => {
+    // Verifica si el menú está expandido
+    const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
     // Actualiza el estado de accesibilidad
-    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute("aria-expanded", !isExpanded);
+    // Alterna las clases activas
+    menuToggle.classList.toggle("is-active");
+    mainMenu.classList.toggle("is-active");
+  };
+
+  // Agrega eventos para abrir/cerrar el menú
+  menuToggle.addEventListener("click", toggleMenu);
+  // Cierra el menú al hacer clic en un enlace
+  menuLinks.forEach((link) => link.addEventListener("click", toggleMenu));
+
   });
 });

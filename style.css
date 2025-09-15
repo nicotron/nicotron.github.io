@@ -8,6 +8,11 @@
   --color-black_1: #020303;
   --color-black_2: #16191D;
   --color-black_3: #2E3338;
+  --color-grey_0: #E5E6E7;
+  --color-gold: #EBDABA;
+  --color-green: #2ECC71;
+  --color-blue: #6F96B2;
+  --color-red: #E84920;
 
   /* Variables de colores light */
   --color-light-primary: var(--color-white_1);
@@ -19,6 +24,13 @@
   --color-dark-secondary: var(--color-black_2);
   --color-dark-tertiary: var(--color-black_3);
   
+  /* Variables de colores de interacción */
+  --color-accent: var(--color-gold);
+  --color-success: var(--color-green);
+  --color-info: var(--color-blue);
+  --color-error: var(--color-red);
+  --color-text-inverted: var(--color-grey_0);
+
   --color-background: var(--color-white);
   
   /* Sistema Tipográfico ----------------------- */
@@ -143,6 +155,7 @@ p {
   font-style: normal;
   font-weight: var(--font-weight-regular);
   line-height: var(--leading-relaxed) 
+  line-height: var(--leading-snug); 
 
   text-align: justify;
 }
@@ -289,10 +302,12 @@ a.is-active {
 }
 
 .hero__content {
+.main__section {
   display: flex;
   flex-direction: column;
   padding: var(--spacing-xs);
   /* gap: var(--spacing-xs); */
+  padding: var(--spacing-sm);
 }
 
 .hero__text {
@@ -309,6 +324,10 @@ a.is-active {
   width: 100%;
   height: auto;
   object-fit: contain;
+}
+
+.hero__content {
+  padding: 0 var(--spacing-xs);
 }
 
 /* 6. BLOQUE: FOOTER
@@ -372,6 +391,7 @@ a.is-active {
     max-width: 270px;
     width: auto;
     padding: 0 var(--spacing-md) 0 0;
+    padding: var(--spacing-md);
   }
 
   .main-menu {
