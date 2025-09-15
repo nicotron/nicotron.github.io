@@ -42,6 +42,7 @@
   /* Escala tipográfica */
   --text-xs: 0.625rem;     /* 10px */
   --text-sm: 0.75rem;      /* 12px */
+  --text-helper: 0.875rem;  /* 14px */
   --text-base: 1rem;       /* 16px */
   --text-lg: 1.125rem;     /* 18px */
   --text-xl: 1.25rem;      /* 20px */
@@ -154,7 +155,6 @@ p {
   font-size: var(--p-desktop);
   font-style: normal;
   font-weight: var(--font-weight-regular);
-  line-height: var(--leading-relaxed) 
   line-height: var(--leading-snug); 
 
   text-align: justify;
@@ -301,12 +301,9 @@ a.is-active {
   gap: var(--spacing-md);
 }
 
-.hero__content {
 .main__section {
   display: flex;
   flex-direction: column;
-  padding: var(--spacing-xs);
-  /* gap: var(--spacing-xs); */
   padding: var(--spacing-sm);
 }
 
@@ -329,6 +326,169 @@ a.is-active {
 .hero__content {
   padding: 0 var(--spacing-xs);
 }
+
+/* Formulario de contacto */
+  ------------------------------------------------- */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset {
+  border: none;
+}
+
+.form__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.legend {
+  color: var(--color-dark-primary);
+  
+  font-size: var(--h3-mobile);
+  font-weight: var(--font-weight-bold);
+  line-height: normal;
+  letter-spacing: -0.03rem;
+}
+
+/* espacio entre legend y primer grupo */
+.legend + .form-group, .legend + .checkbox__group{
+  margin-top: var(--spacing-xs);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: var(--spacing-md);
+}
+
+/* Nuevas reglas CSS */
+.form-group input,
+.form-group textarea {
+  border-style: none none solid none;
+  /* border: 1px solid var(--color-dark-tertiary); */
+  color: var(--color-dark-tertiary);
+  transition: all 0.2s ease-in-out;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--color-success);
+  color: var(--color-dark-primary);
+  border-style: none none solid none;
+  outline: none;
+}
+
+.form-group.active label {
+  color: var(--color-dark-primary);
+}
+label {
+  display: flex;
+}
+
+input {
+  display: flex;
+  width: 100%;
+  color: var(--color-text-inverted);
+  padding: var(--spacing-xs) 4px;
+  border-style: none none solid none;
+
+  font-size: var(--text-base);
+}
+
+::placeholder {
+  color: var(--color-text-inverted);
+}
+
+.helper__text {
+  font-size: var(--text-helper);
+  color: var(--color-dark-tertiary);
+}
+
+#student__option {
+  display: flex;
+  input {
+    width: auto;
+  }
+}
+
+.checkbox__group {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-lg);
+}
+
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.checkbox-option input[type="checkbox"] {
+  width: 16px;
+  height: 16px; 
+  border: 1px solid var(--color-dark-secondary);
+  margin: 0;
+  cursor: pointer;
+}
+
+.checkbox-option input[type="checkbox"]:checked {
+  background-color: var(--color-success);
+}
+
+.checkbox-option input[type="checkbox"]:checked::after {
+  background-color: var(--color-dark-tertiary);
+}
+
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.checkbox-option label {
+  cursor: pointer;
+}
+
+textarea {
+  border: none;
+  padding: var(--spacing-xs);
+}
+
+.button {
+  width: 100%;
+  padding: var(--spacing-md);
+  background-color: var(--color-light-primary);
+  color: var(--color-dark-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--color-dark-primary);
+  color: var(--color-light-primary);
+}
+.button:disabled,
+.button--disabled {
+    background-color: var(--color-light-primary);
+    color: var(--color-light-secondary);
+    cursor: not-allowed;
+}
+
+.button:disabled:hover,
+.button--disabled:hover {
+    background-color: var(--color-dark-primary);
+    color: var(--color-light-tertiary);
+}
+
 
 /* 6. BLOQUE: FOOTER
 ------------------------------------------------- */
@@ -390,7 +550,6 @@ a.is-active {
   .hero__content {
     max-width: 270px;
     width: auto;
-    padding: 0 var(--spacing-md) 0 0;
     padding: var(--spacing-md);
   }
 

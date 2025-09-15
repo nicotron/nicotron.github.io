@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Contacto | Nicolás Troncoso López</title>
 </head>
@@ -27,117 +28,83 @@
         </ul>
     </nav>
     <!-- formulario -->
-    <main>
-<section class="contact-section">
-    <h1>Contáctame</h1>
-    <p>Puedes contactarme mediante este formulario con tu nombre, institución y correo electrónico. Selecciona los
-        campos
-        relacionados con nuestro trabajo que te interesen. Si eres estudiante, no dudes en reservar una hora de clase
-        para
-        hablar sobre cualquier reto en tu práctica.</p>
     <main class="hero">
         <section class="main__section">
             <p class="paragraph__lora">Puedes contactarme mediante este formulario, selecciona los campos relacionados que
                 te interesen.
                 Si eres estudiante, no dudes y podemos hablar sobre los desafíos en tu práctica.<br><br></p>
 
-    <form class="contact-form" action="#" method="post" autocomplete="on" id="contactForm">
-        <fieldset>
-            <legend>Información personal</legend>
-            <div class="form-group">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required placeholder="Ej: Juan Pérez">
+    <form class="contact__form" action="send_email.php" method="post" autocomplete="on" id="contactForm">
+        <div class="form__section">
+            <!-- información personal -->
+            <fieldset>
+                <legend class="legend">Información personal</legend>
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required placeholder="Nicolás Troncoso López" aria-describedby="name-helper">
+                    <span class="helper__text" id="name-helper">El nombre es un campo obligatorio.</span>
                 </div>
-            <div class="form-group">
-                <label for="institution">Institución:</label>
-                <input type="text" id="institution" name="institution" placeholder="Ej: Universidad de Chile">
+                <div class="form-group">
+                    <label for="institution">Institución</label>
+                    <input type="text" id="institution" name="institution" placeholder="Universidad, laboratorio, compañía..."
+                        aria-describedby="institution-helper">
+                    <span class="helper__text" id="institution-helper">La institución ayuda a contextualizar tu mensaje.</span>
                 </div>
-
-            <div class="form-group">
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required placeholder="Ej: juan.perez@dominio.cl">
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" required placeholder="nicolastroncoso@gmail.com"
+                        aria-describedby="email-helper">
+                    <span class="helper__text" id="email-helper">Introduce una dirección de correo válida.</span>
+                </div>
+            </fieldset>
+            <!-- estudiante -->
+            <fieldset>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="student" name="student" value="yes">
+                    <label for="student">¿Eres estudiante?</label>
+                </div>
+                <div class="form-group" id="teaching-hour" hidden>
+                    <label for="booking">Reserva una hora de docencia:</label>
+                    <input type="datetime-local" id="booking" name="booking">
                 </div>
                 </fieldset>
-        <fieldset>
-            <legend>Áreas de interés</legend>
-            <p>Selecciona los campos que te interesen:</p>
-            <div class="checkbox-group">
-                <div class="checkbox-option">
-                    <input type="checkbox" id="investigacion" name="interests[]" value="investigacion">
-                    <label for="investigacion">Investigación</label>
-                </div>
-                <div class="checkbox-option">
-                    <input type="checkbox" id="proyectos" name="interests[]" value="proyectos">
-                    <label for="proyectos">Proyectos</label>
-                </div>
-                <div class="checkbox-option">
-                    <input type="checkbox" id="colaboracion" name="interests[]" value="colaboracion">
-                    <label for="colaboracion">Colaboración</label>
-                </div>
-                <div class="checkbox-option">
-                    <input type="checkbox" id="docencia" name="interests[]" value="docencia">
-                    <label for="docencia">Docencia</label>
-                </div>
-                <div class="checkbox-option">
-                    <input type="checkbox" id="otros" name="interests[]" value="otros">
-                    <label for="otros">Otros</label>
-                </div>
-            </div>
-        </fieldset>
-
-    <div class="form-group" id="teaching-hour" hidden>
-        <label for="booking">Reserva una hora de docencia:</label>
-        <input type="datetime-local" id="booking" name="booking">
-    </div>
-    <button type="submit" id="submitButton" disabled>Enviar</button>
+                <!-- área de interés -->
+                <fieldset>
+                    <legend class="legend">Áreas de interés</legend>
+                    <div class="checkbox__group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="investigacion" name="interests[]" value="investigacion">
+                            <label for="investigacion">Investigación</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="codigo" name="interests[]" value="codigo">
+                            <label for="codigo">Código</label>
+                            </div>
+                    </div>
+                    <div class="checkbox__group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="colaboracion" name="interests[]" value="colaboracion">
+                            <label for="colaboracion">Colaboración</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="docencia" name="interests[]" value="docencia">
+                            <label for="docencia">Docencia</label>
+                        </div>
+                    </div>
+                    </fieldset>
+                    <!-- mensaje -->
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="message" class="legend">Mensaje</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+                    </div>
+                    <button class="button" type="submit" id="submitButton" enabled>Enviar</button>
+            </fieldset>
+        </div>
     </form>
-</section>
     </section>
 </main>
-<script>
-        // Script para mostrar/ocultar el campo de reserva y para validar el formulario
-        const studentCheckbox = document.getElementById('student');
-        const teachingHourDiv = document.getElementById('teaching-hour');
-        const form = document.getElementById('contactForm');
-        const submitButton = document.getElementById('submitButton');
-        const nameInput = document.getElementById('name');
-        const emailInput = document.getElementById('email');
-        const interestsCheckboxes = document.querySelectorAll('input[name="interests[]"]');
 
-        // Función para validar el estado del formulario y habilitar/deshabilitar el botón
-        function validateForm() {
-            const isNameValid = nameInput.value.trim() !== '';
-            const isEmailValid = emailInput.value.trim() !== '';
-            let isInterestSelected = false;
-
-            // Recorrer los checkboxes de interés para ver si al menos uno está seleccionado
-            for (const checkbox of interestsCheckboxes) {
-                if (checkbox.checked) {
-                    isInterestSelected = true;
-                    break;
-                }
-            }
-
-            // Habilitar el botón si todas las condiciones se cumplen
-            if (isNameValid && isEmailValid && isInterestSelected) {
-                submitButton.disabled = false;
-            } else {
-                submitButton.disabled = true;
-            }
-        }
-
-        // Eventos para la validación en vivo
-        form.addEventListener('input', validateForm);
-        studentCheckbox.addEventListener('change', function () {
-            teachingHourDiv.hidden = !this.checked;
-        });
-
-    // Validar el formulario al cargar la página en caso de que algún campo ya tenga valor
-    document.addEventListener('DOMContentLoaded', validateForm);
-</script>
-
-    <footer class="footer">
-        <p class="footer__copyright">© 2011-2024</p>
 <!-- footer -->
 <footer class="footer">
     <p class="footer__copyright">© 2011-2024</p>
