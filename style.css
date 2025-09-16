@@ -479,14 +479,14 @@ textarea {
 .button:disabled,
 .button--disabled {
     background-color: var(--color-light-primary);
-    color: var(--color-light-secondary);
+    color: var(--color-light-tertiary);
     cursor: not-allowed;
 }
 
 .button:disabled:hover,
 .button--disabled:hover {
-    background-color: var(--color-dark-primary);
-    color: var(--color-light-tertiary);
+    background-color: var(--color-grey_0);
+    color: var(--color-dark-tertiary);
 }
 
 
