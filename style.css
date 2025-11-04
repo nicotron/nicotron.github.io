@@ -167,12 +167,10 @@ p {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  align-self: stretch;
   padding: var(--spacing-sm);
 }
 
-.header__logo {
-  padding: var(--spacing-md);
-}
 
 /* menu hamburger */
 .menu-toggle {
@@ -283,6 +281,55 @@ p {
   margin-top: var(--spacing-md);
 }
 
+.slide-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+.slide-controls__button {
+  /* Propiedades de Layout / Modelo de Caja */
+  box-sizing: border-box;
+  padding: var(--spacing-md);
+  min-width: 48px;
+  
+  /* Propiedades Visuales */
+  background-color: var(--color-light-secondary);
+  color: var(--color-dark-secondary);
+  border: none;
+  
+  /* Propiedades de Texto y Fuente */
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  letter-spacing: 0.02rem;
+  text-transform: uppercase;
+  
+  /* Propiedades de Interacción */
+  cursor: pointer;
+  transition: background 0.13s;
+}
+
+.slide-controls__button:hover {
+  background-color: var(--color-dark-primary);
+  color: var(--color-light-primary);
+}
+
+.slide-controls__button:active {
+  background-color: var(--color-dark-secondary);
+}
+
+.slide-controls__indicator {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark-secondary);
+  letter-spacing: 0.02rem;
+  text-transform: uppercase;
+}
+
 a.main-menu__item {
   display: block; /* Hace que el enlace ocupe todo el espacio del li */
 }
@@ -297,7 +344,7 @@ a.is-active {
 ------------------------------------------------- */
 .hero {
   display: flex;
-  flex-direction: column; /* Revertimos el orden para móviles */
+  flex-direction: column;
   gap: var(--spacing-md);
 }
 
@@ -305,6 +352,10 @@ a.is-active {
   display: flex;
   flex-direction: column;
   padding: var(--spacing-sm);
+}
+
+.hero__title {
+  font-weight: var(--font-weight-bold);
 }
 
 .hero__text {
@@ -328,7 +379,7 @@ a.is-active {
 }
 
 /* Formulario de contacto */
-  ------------------------------------------------- */
+/* ------------------------------------------------- */
 form {
   display: flex;
   flex-direction: column;
@@ -385,6 +436,7 @@ fieldset {
 .form-group.active label {
   color: var(--color-dark-primary);
 }
+
 label {
   display: flex;
 }
@@ -476,6 +528,7 @@ textarea {
   background-color: var(--color-dark-primary);
   color: var(--color-light-primary);
 }
+
 .button:disabled,
 .button--disabled {
     background-color: var(--color-light-primary);
@@ -494,6 +547,7 @@ textarea {
 ------------------------------------------------- */
 .footer {
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
   padding: var(--spacing-md);
 }
@@ -507,48 +561,59 @@ textarea {
 
 /* 7. MEDIA QUERIES
 ------------------------------------------------- */
-/* Tablet (768px) */
+/* Tablet sm (768px) */
 @media (min-width: 48rem) {
   /* Reglas de tipografía responsivas */
   h1 { font-size: var(--h1-tablet); }
-  h2 { font-size: var(--h2-tablet); }
-  h3 { font-size: var(--h3-tablet); }
+  /* h2 { font-size: var(--h2-tablet); } */
+  /* h3 { font-size: var(--h3-tablet); } */
   p { font-size: var(--p-tablet); }
 
   /* Ajustes de bloques */
-  .hero {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: var(--spacing-lg);
-  }
-
   .header {
-    justify-content: flex-start;
+    align-self: stretch;
+    /* justify-content: flex-start; */
     padding: var(--spacing-lg);
   }
-
+ 
   .footer {
     padding: var(--spacing-lg);
   }
 }
 
+@media (min-width: 62rem) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .main-menu {
+    display: block !important;
+    position: static;
+    transform: none;
+    height: auto;
+    background: none;
+  }
+}
+
+
 /* Desktop (992px) */
 @media (min-width: 62rem) {
   /* Reglas de tipografía responsivas */
-  h1 { font-size: var(--h1-desktop); }
-  h2 { font-size: var(--h2-desktop); }
-  h3 { font-size: var(--h3-desktop); }
-  p { font-size: var(--p-desktop); }
+  /* h1 { font-size: var(--h1-desktop); } */
+  /* h2 { font-size: var(--h2-desktop); } */
+  /* h3 { font-size: var(--h3-desktop); } */
+  /* p { font-size: var(--p-desktop); } */
 
   /* Ajustes de bloques */
   .hero {
-    align-items: center;
-    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: end;
+
+    justify-content:center;
   }
   
   .hero__content {
-    max-width: 270px;
+    max-width: 300px;
     width: auto;
     padding: var(--spacing-md);
   }
