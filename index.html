@@ -28,16 +28,15 @@
             <li><a href="contacto.html" class="main-menu__item">contacto</a></li>
         </ul>
     </nav>
-    <!-- <img src="img/square.png" alt="Logo"> -->
     <main class="hero">
         <section class="hero__image">
-            <picture>
-                <source srcset="img/home/home_2xxl.png" media="(min-width: 120rem)"> <!-- 1920px -->
-                <source srcset="img/home/home_xxl.png" media="(min-width: 90rem)"> <!-- 1440px -->
-                <source srcset="img/home/home_xl.png" media="(min-width: 80rem)"> <!-- 1280px -->
-                <source srcset="img/home/home_lg.png" media="(min-width: 62rem)"> <!-- 992px -->
-                <source srcset="img/home/home_md.png" media="(min-width: 48rem)"> <!-- 768px -->
-                <img src="img/home/home_xs.png" alt="Imagen principal"> <!-- <768px -->
+            <picture id="hero-picture">
+                <source id="hero-source-2xxl" srcset="img/home/home_2xxl.png" media="(min-width: 120rem)"> <!-- 1920px -->
+                <source id="hero-source-xxl" srcset="img/home/home_xxl.png" media="(min-width: 90rem)"> <!-- 1440px -->
+                <source id="hero-source-xl" srcset="img/home/home_xl.png" media="(min-width: 80rem)"> <!-- 1280px -->
+                <source id="hero-source-lg" srcset="img/home/home_lg.png" media="(min-width: 62rem)"> <!-- 992px -->
+                <source id="hero-source-md" srcset="img/home/home_md.png" media="(min-width: 48rem)"> <!-- 768px -->
+                <img id="hero-img" src="img/home/home_xs.png" alt="Imagen principal"> <!-- mobile -->
             </picture>
         </section>
         <section class="hero__content">
