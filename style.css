@@ -188,35 +188,35 @@ p {
   z-index: 1000;
 }
 
-.line {
+.header__menu-line {
   width: 18px;
   height: 2px;
   background-color: var(--color-dark-primary);
   transition: transform 0.13s ease-in-out;
 }
 
-.menu-toggle.is-active {
+.header__menu-toggle--is-active {
   background-color: var(--color-dark-primary);
 }
 
-.menu-toggle.is-active .line {
+.header__menu-toggle--is-active .header__menu-line {
   background-color: var(--color-light-tertiary);
 }
 
-.menu-toggle.is-active .line:first-child {
+.header__menu-toggle--is-active .header__menu-line:first-child {
   transform: translateY(5px) rotate(45deg);
 }
 
-.menu-toggle.is-active .line:nth-child(2) {
+.header__menu-toggle--is-active .header__menu-line:nth-child(2) {
   opacity: 0;
 }
 
-.menu-toggle.is-active .line:last-child {
+.header__menu-toggle--is-active .header__menu-line:last-child {
   transform: translateY(-4.5px) rotate(-45deg);
 }
 
 /* Menu */
-.main-menu {
+.menu {
  position: fixed;
   top: 0;
   left: 0;
@@ -231,11 +231,11 @@ p {
   z-index: 999;
 }
 
-.main-menu.is-active {
+.menu.menu--is-active {
   transform: translateY(0);
 }
 
-.main-menu__list {
+.menu__list {
   list-style: none;
   /* padding: 0;  */
   /* margin: 0; */
@@ -245,11 +245,11 @@ p {
   width: 100%;
 }
 
-.main-menu__item {
   width: 100%; /* Cada ítem ocupa el 100% del ancho de la lista */
+.menu__item {
 }
 
-.main-menu__item, .call-to-action__link {
+.menu__link, .cta__link {
   /* Propiedades de Layout / Modelo de Caja */
   width: 100%;
   box-sizing: border-box;
@@ -272,7 +272,7 @@ p {
   transition: background 0.13s;
 }
 
-.call-to-action {
+.cta {
   display: flex;
   flex-direction: row;
   gap: 8px;
@@ -281,7 +281,7 @@ p {
   margin-top: var(--spacing-md);
 }
 
-.slide-controls {
+.footer__slide-controls {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -290,7 +290,7 @@ p {
   width: 100%;
 }
 
-.slide-controls__button {
+.footer__slide-button {
   /* Propiedades de Layout / Modelo de Caja */
   box-sizing: border-box;
   padding: var(--spacing-md);
@@ -313,16 +313,16 @@ p {
   transition: background 0.13s;
 }
 
-.slide-controls__button:hover {
+.footer__slide-button:hover {
   background-color: var(--color-dark-primary);
   color: var(--color-light-primary);
 }
 
-.slide-controls__button:active {
+.footer__slide-button:active {
   background-color: var(--color-dark-secondary);
 }
 
-.slide-controls__indicator {
+.footer__slide-indicator {
   font-size: var(--text-base);
   font-weight: var(--font-weight-bold);
   color: var(--color-dark-secondary);
@@ -330,11 +330,11 @@ p {
   text-transform: uppercase;
 }
 
-a.main-menu__item {
+.menu__link {
   display: block; /* Hace que el enlace ocupe todo el espacio del li */
 }
 
-a.is-active {
+.menu__link--active {
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 2px;
@@ -405,11 +405,11 @@ fieldset {
 }
 
 /* espacio entre legend y primer grupo */
-.legend + .form-group, .legend + .checkbox__group{
+.legend + .form__group, .legend + .form__checkbox-group{
   margin-top: var(--spacing-xs);
 }
 
-.form-group {
+.form__group {
   display: flex;
   flex-direction: column;
 
@@ -417,23 +417,23 @@ fieldset {
 }
 
 /* Nuevas reglas CSS */
-.form-group input,
-.form-group textarea {
+.form__group input,
+.form__group textarea {
   border-style: none none solid none;
   /* border: 1px solid var(--color-dark-tertiary); */
   color: var(--color-dark-tertiary);
   transition: all 0.2s ease-in-out;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.form__group input:focus,
+.form__group textarea:focus {
   border-color: var(--color-success);
   color: var(--color-dark-primary);
   border-style: none none solid none;
   outline: none;
 }
 
-.form-group.active label {
+.form__group.active label {
   color: var(--color-dark-primary);
 }
 
@@ -467,19 +467,20 @@ input {
   }
 }
 
-.checkbox__group {
+#student__option input {
+.form__checkbox-group {
   display: flex;
   flex-direction: row;
   gap: var(--spacing-lg);
 }
 
-.checkbox-option {
+.form__checkbox-option {
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
 }
 
-.checkbox-option input[type="checkbox"] {
+.form__checkbox-option input[type="checkbox"] {
   width: 16px;
   height: 16px; 
   border: 1px solid var(--color-dark-secondary);
@@ -487,21 +488,20 @@ input {
   cursor: pointer;
 }
 
-.checkbox-option input[type="checkbox"]:checked {
+.form__checkbox-option input[type="checkbox"]:checked {
   background-color: var(--color-success);
 }
 
-.checkbox-option input[type="checkbox"]:checked::after {
+.form__checkbox-option input[type="checkbox"]:checked::after {
   background-color: var(--color-dark-tertiary);
 }
 
-.checkbox-option {
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
 }
 
-.checkbox-option label {
+.form__checkbox-option label {
   cursor: pointer;
 }
 

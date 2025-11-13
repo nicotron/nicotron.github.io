@@ -13,18 +13,18 @@
 <body>
     <header class="header">
         <h1 class="header__title">Contacto</h1>
-        <button class="menu-toggle" aria-controls="main-menu" aria-expanded="false">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
+        <button class="header__menu-toggle" aria-controls="main-menu" aria-expanded="false">
+            <span class="header__menu-line"></span>
+            <span class="header__menu-line"></span>
+            <span class="header__menu-line"></span>
         </button>
     </header>
-    <nav id="main-menu" class="main-menu">
-        <ul class="main-menu__list">
-            <li><a href="index.html" class="main-menu__item">inicio</a></li>
-            <li><a href="acerca.html" class="main-menu__item">acerca</a></li>
-            <li><a href="trabajo.html" class="main-menu__item">trabajo</a></li>
-            <li><a href="contacto.html" class="main-menu__item is-active">contacto</a></li>
+    <nav id="main-menu" class="menu">
+        <ul class="menu__list">
+            <li class="menu__item"><a href="index.html" class="menu__link">inicio</a></li>
+            <li class="menu__item"><a href="acerca.html" class="menu__link">acerca</a></li>
+            <li class="menu__item"><a href="trabajo.html" class="menu__link">trabajo</a></li>
+            <li class="menu__item"><a href="contacto.html" class="menu__link menu__link--active">contacto</a></li>
         </ul>
     </nav>
     <main class="hero">
@@ -38,18 +38,18 @@
                     <!-- Información personal -->
                     <fieldset>
                         <legend class="legend">Información personal</legend>
-                        <div class="form-group">
+                        <div class="form__group">
                             <label for="name">Nombre</label>
                             <input type="text" id="name" name="name" required placeholder="Nicolás Troncoso López" aria-describedby="nameMessage">
                             <span class="helper__text" id="nameMessage">El nombre es un campo obligatorio.</span>
                             </div>
-                            <div class="form-group">
+                            <div class="form__group">
                                 <label for="institution">Institución</label>
                                 <input type="text" id="institution" name="institution" placeholder="Universidad, laboratorio, compañía..."
                                 aria-describedby="institutionMessage">
                             <span class="helper__text" id="institutionMessage">La institución ayuda a contextualizar tu mensaje.</span>
                         </div>
-                        <div class="form-group">
+                        <div class="form__group">
                             <label for="email">Correo electrónico</label>
                             <input type="email" id="email" name="email" required placeholder="nicolastroncoso@gmail.com"
                                 aria-describedby="emailMessage">
@@ -58,11 +58,11 @@
                     </fieldset>
                     <!-- Estudiante -->
                     <fieldset>
-                        <div class="checkbox-option">
+                        <div class="form__checkbox-option">
                             <input type="checkbox" id="student" name="student" value="yes">
                             <label for="student">¿Eres estudiante?</label>
                         </div>
-                        <div class="form-group" id="teaching-hour" style="display: none;">
+                        <div class="form__group" id="teaching-hour" style="display: none;">
                             <label for="booking">Reserva una hora de docencia:</label>
                             <input type="datetime-local" id="booking" name="booking" aria-describedby="bookingMessage">
                             <span class="helper__text" id="bookingMessage">Selecciona la hora de docencia.</span>
@@ -71,22 +71,22 @@
                     <!-- Áreas de interés -->
                     <fieldset>
                         <legend class="legend">Áreas de interés</legend>
-                        <div class="checkbox__group">
-                            <div class="checkbox-option">
+                        <div class="form__checkbox-group">
+                            <div class="form__checkbox-option">
                                 <input type="checkbox" id="investigacion" name="interests[]" value="investigacion">
                                 <label for="investigacion">Investigación</label>
                             </div>
-                            <div class="checkbox-option">
+                            <div class="form__checkbox-option">
                                 <input type="checkbox" id="codigo" name="interests[]" value="codigo">
                                 <label for="codigo">Código</label>
                             </div>
                         </div>
-                        <div class="checkbox__group">
-                            <div class="checkbox-option">
+                        <div class="form__checkbox-group">
+                            <div class="form__checkbox-option">
                                 <input type="checkbox" id="colaboracion" name="interests[]" value="colaboracion">
                                 <label for="colaboracion">Colaboración</label>
                             </div>
-                            <div class="checkbox-option">
+                            <div class="form__checkbox-option">
                                 <input type="checkbox" id="docencia" name="interests[]" value="docencia">
                                 <label for="docencia">Docencia</label>
                             </div>
