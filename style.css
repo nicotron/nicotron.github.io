@@ -499,12 +499,32 @@ html {
     flex-direction: row-reverse;
     align-items: end;
     justify-content: center;
+    align-items: end;
   }
 
   .hero__content {
     max-width: 300px;
     width: auto;
     padding: var(--spacing-md);
+  }
+}
+
+/* 8. BLOQUE: ACERCA -------------------------------------------------------- */
+.acerca {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 62 Desktop */
+@media (min-width: 62rem) {
+  .acerca {
+    /* Propiedades de Layout / Modelo de Caja */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    width: var(--breakpoint-md);
+    margin: 0 auto;
   }
 }
 
