@@ -501,7 +501,6 @@ html {
 @media (min-width: 62rem) {
   .hero {
     flex-direction: row-reverse;
-    align-items: end;
     justify-content: center;
     align-items: end;
   }
@@ -786,10 +785,26 @@ textarea {
   text-transform: uppercase;
 }
 
-/* Footer: tablet and up adjustments kept next to footer component */
+/* 48 Tablet */
 @media (min-width: 48rem) {
   .footer {
     padding: var(--spacing-lg);
+  }
+}
+
+/* 62 Desktop */
+@media (min-width: 62rem) {
+  .footer {
+    margin: 0 auto;
+    width: var(--breakpoint-lg);
+  }
+}
+
+/* 120 4K Desktop */
+@media (min-width: 120rem) {
+  .footer {
+    width: var(--breakpoint-xxl);
+    margin: 0 auto;
   }
 }
 
