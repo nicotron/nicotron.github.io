@@ -516,7 +516,7 @@ html {
 .acerca {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 /* 62 Desktop */
@@ -722,7 +722,7 @@ input {
   /* Propiedades de Layout / Modelo de Caja */
   display: flex;
   flex-direction: row;
-  gap: var(--spacing-lg);
+  flex-wrap: wrap;
 }
 
 .form__checkbox-option {
@@ -763,7 +763,6 @@ input {
 textarea {
   /* Propiedades de Layout / Modelo de Caja */
   padding: var(--spacing-xs);
-
   /* Propiedades Visuales */
   border: none;
 }

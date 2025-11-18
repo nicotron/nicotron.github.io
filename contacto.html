@@ -11,22 +11,24 @@
     <title>Contacto | Nicolás Troncoso López</title>
 </head>
 <body>
-    <header class="header">
-        <h1 class="header__title">Contacto</h1>
-        <button class="header__menu-toggle" aria-controls="main-menu" aria-expanded="false">
-            <span class="header__menu-line"></span>
-            <span class="header__menu-line"></span>
-            <span class="header__menu-line"></span>
-        </button>
-    </header>
-    <nav id="main-menu" class="menu">
-        <ul class="menu__list">
-            <li class="menu__item"><a href="index.html" class="menu__link">inicio</a></li>
-            <li class="menu__item"><a href="acerca.html" class="menu__link">acerca</a></li>
-            <li class="menu__item"><a href="trabajo.html" class="menu__link">trabajo</a></li>
-            <li class="menu__item"><a href="contacto.html" class="menu__link menu__link--active">contacto</a></li>
-        </ul>
-    </nav>
+       <div class="header__container">
+        <header class="header">
+            <h1 class="header__title">Contacto</h1>
+            <button class="header__menu-toggle" aria-controls="main-menu" aria-expanded="false">
+                <span class="header__menu-line"></span>
+                <span class="header__menu-line"></span>
+                <span class="header__menu-line"></span>
+            </button>
+        </header>
+        <nav id="main-menu" class="menu">
+            <ul class="menu__list">
+                <li class="menu__item"><a href="index.html" class="menu__link">inicio</a></li>
+                <li class="menu__item"><a href="acerca.html" class="menu__link">acerca</a></li>
+                <li class="menu__item"><a href="trabajo.html" class="menu__link">trabajo</a></li>
+                <li class="menu__item"><a href="contacto.html" class="menu__link menu__link--active">contacto</a></li>
+            </ul>
+        </nav>
+    </div>
     <main class="hero">
         <section class="main__section">
             <p class="paragraph__lora">Puedes contactarme mediante este formulario, selecciona los campos relacionados que
@@ -80,8 +82,6 @@
                                 <input type="checkbox" id="codigo" name="interests[]" value="codigo">
                                 <label for="codigo">Código</label>
                             </div>
-                        </div>
-                        <div class="form__checkbox-group">
                             <div class="form__checkbox-option">
                                 <input type="checkbox" id="colaboracion" name="interests[]" value="colaboracion">
                                 <label for="colaboracion">Colaboración</label>
