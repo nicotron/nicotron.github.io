@@ -30,8 +30,10 @@
             </ul>
         </nav>
     </div>
-    <main class="hero">
-        <section class="hero__image">
+    <main class="hero__group">
+        <section class="hero">
+
+        <div class="hero__image">
             <picture id="hero-picture">
                 <source id="hero-source-2xxl" srcset="img/home/home_2xxl.png" media="(min-width: 120rem)"> <!-- 1920px -->
                 <source id="hero-source-xxl" srcset="img/home/home_xxl.png" media="(min-width: 90rem)"> <!-- 1440px -->
@@ -40,25 +42,29 @@
                 <source id="hero-source-md" srcset="img/home/home_md.png" media="(min-width: 48rem)"> <!-- 768px -->
                 <img id="hero-img" src="img/home/home_xs.png" alt="Imagen principal"> <!-- mobile -->
             </picture>
-        </section>
-        <section class="hero__content">
+        </div>
+        <div class="hero__content">
             <h2 id="hero-title" class="hero__title">Archivo Actual</h2>
             <h2 id="hero-subtitle" class="hero__subtitle">software - docencia</h2>
             <p id="hero-text" class="hero__text">
                 Archivos de imagen y video relacionados a la práctica de escribir código.
             </p>
+        </div>
         </section>
+
+        <div class="cta">
+            <div class="cta__slide-controls">
+                <button class="cta__slide-button" data-slide="prev" aria-label="Previous slide">←</button>
+                <span id="slide-indicator" class="cta__slide-indicator">1/3</span>
+                <button class="cta__slide-button" data-slide="next" aria-label="Next slide">→</button>
+            </div>
+        </div>
     </main>
+
     <footer class="footer">
         <p class="footer__copyright">© 2011-2024</p>
-        <section class="cta">
-            <div class="footer__slide-controls">
-                <button class="footer__slide-button" data-slide="prev" aria-label="Previous slide">←</button>
-                <span id="slide-indicator" class="footer__slide-indicator">1/3</span>
-                <button class="footer__slide-button" data-slide="next" aria-label="Next slide">→</button>
-            </div>
-        </section>
     </footer>
+    
     <script src="js/menu.js"></script>
     <script src="js/hero.js"></script>
 </body>

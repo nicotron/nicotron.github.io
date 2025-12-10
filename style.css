@@ -127,7 +127,7 @@ body {
 img {
   /* Propiedades de Layout / Modelo de Caja */
   max-width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 /* 3. TIPOGRAFÍA BASE
@@ -359,16 +359,6 @@ html {
   transition: background 0.13s;
 }
 
-.cta {
-  /* Propiedades de Layout / Modelo de Caja */
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  width: 100%;
-  padding: var(--spacing-md);
-  margin-top: var(--spacing-md);
-}
-
 .menu__link {
   /* Propiedades de Layout / Modelo de Caja */
   display: block; /* Hace que el enlace ocupe todo el espacio del li */
@@ -379,6 +369,64 @@ html {
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 2px;
+}
+
+.cta {
+  /* Propiedades de Layout / Modelo de Caja */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  padding: var(--spacing-md) 0px;
+  /* margin-top: var(--spacing-md); */
+}
+
+.cta__slide-button {
+  /* Propiedades de Layout / Modelo de Caja */
+  box-sizing: border-box;
+  padding: var(--spacing-md);
+  min-width: 150px;
+  
+  /* Propiedades Visuales */
+  background-color: var(--color-light-secondary);
+  color: var(--color-dark-secondary);
+  border: none;
+  
+  /* Propiedades de Texto y Fuente */
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  letter-spacing: 0.02rem;
+  text-transform: uppercase;
+  
+  /* Propiedades de Interacción */
+  cursor: pointer;
+
+  /* Propiedades de Transición */
+  transition: background 0.13s;
+}
+
+.cta__slide-button:hover {
+  /* Propiedades Visuales */
+  background-color: var(--color-dark-primary);
+  color: var(--color-light-primary);
+}
+
+.cta__slide-button:active {
+  /* Propiedades Visuales */
+  background-color: var(--color-dark-secondary);
+}
+
+.cta__slide-indicator {
+  /* Propiedades Visuales */
+  color: var(--color-dark-secondary);
+
+  /* Propiedades de Texto y Fuente */
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.02rem;
+  text-transform: uppercase;
+  padding: var(--spacing-sm);
 }
 
 /* 62 Desktop */
@@ -402,6 +450,31 @@ html {
 
   .menu__item a {
     color: var(--color-dark-primary);
+  }
+
+  .cta__slide-controls {
+    /* Propiedades de Layout / Modelo de Caja */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--spacing-md);
+    width: 100%;
+    padding-left: 7%;
+  }  
+}
+
+/* 90 xl extra large */
+@media (min-width: 90rem) {
+  .cta__slide-controls {
+    padding-left: 12.5%;
+  }
+}
+
+/* 120 HD 4K */
+@media (min-width: 90rem) {
+  .cta__slide-controls {
+    padding-left: 17%;
   }
 }
 
@@ -453,6 +526,13 @@ html {
 }
 
 /* 5. BLOQUE: HERO ---------------------------------------------------------- */
+.hero__group {
+  /* Propiedades de Layout / Modelo de Caja */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .hero {
   /* Propiedades de Layout / Modelo de Caja */
   display: flex;
@@ -488,8 +568,8 @@ html {
 .hero__image img {
   /* Propiedades de Layout / Modelo de Caja */
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero__content {
@@ -506,9 +586,16 @@ html {
   }
 
   .hero__content {
-    max-width: 300px;
+    max-width: 390px;
     width: auto;
     padding: var(--spacing-md);
+  }
+}
+
+/* 120 HD */
+@media (min-width: 120rem) {
+  .hero {
+    height: 1100px;
   }
 }
 
@@ -807,59 +894,4 @@ textarea {
   }
 }
 
-.footer__slide-controls {
-  /* Propiedades de Layout / Modelo de Caja */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: var(--spacing-md);
-  width: 100%;
-}
 
-.footer__slide-button {
-  /* Propiedades de Layout / Modelo de Caja */
-  box-sizing: border-box;
-  padding: var(--spacing-md);
-  min-width: 48px;
-  
-  /* Propiedades Visuales */
-  background-color: var(--color-light-secondary);
-  color: var(--color-dark-secondary);
-  border: none;
-  
-  /* Propiedades de Texto y Fuente */
-  font-size: var(--text-base);
-  font-weight: var(--font-weight-bold);
-  text-align: center;
-  letter-spacing: 0.02rem;
-  text-transform: uppercase;
-  
-  /* Propiedades de Interacción */
-  cursor: pointer;
-
-  /* Propiedades de Transición */
-  transition: background 0.13s;
-}
-
-.footer__slide-button:hover {
-  /* Propiedades Visuales */
-  background-color: var(--color-dark-primary);
-  color: var(--color-light-primary);
-}
-
-.footer__slide-button:active {
-  /* Propiedades Visuales */
-  background-color: var(--color-dark-secondary);
-}
-
-.footer__slide-indicator {
-  /* Propiedades Visuales */
-  color: var(--color-dark-secondary);
-
-  /* Propiedades de Texto y Fuente */
-  font-size: var(--text-base);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: 0.02rem;
-  text-transform: uppercase;
-}
