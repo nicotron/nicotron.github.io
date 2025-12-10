@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             title: "Archivo Colourdar",
             subtitle: "visualización de datos",
-            text: "Temperaturas históricas por ciudad",
+            text: "Temperaturas históricas de ciudades entre 2002 - 2011",
             images: {
                 xs: "img/home/home_xs_colourdar.png",
                 md: "img/home/home_md_colourdar.png",
