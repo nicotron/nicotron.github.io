@@ -381,6 +381,13 @@ html {
   /* margin-top: var(--spacing-md); */
 }
 
+.dropdown-wrapper {
+  /* Propiedades de Layout / Modelo de Caja */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .cta__slide-button {
   /* Propiedades de Layout / Modelo de Caja */
   box-sizing: border-box;
@@ -428,6 +435,7 @@ html {
   text-transform: uppercase;
   padding: var(--spacing-sm);
 }
+
 
 /* 62 Desktop */
 @media (min-width: 62rem) {
@@ -606,6 +614,102 @@ html {
   /* justify-content: space-between; */
 }
 
+/* Dropdown - Curriculum */
+.dropdown {
+  /* Propiedades de Layout / Modelo de Caja */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  border: none;
+  border-top: 1px solid var(--color-grey_0);
+  width: 100%;
+  background: transparent;
+  
+  /* Propiedades de Texto y Fuente */
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark-secondary);
+  text-align: left;
+  letter-spacing: 0.02rem;
+  text-transform: uppercase;
+  
+  /* Propiedades de Interacción */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dropdown__label {
+  flex: 1;
+}
+
+.dropdown__arrow {
+  /* Ocultar el contenido del span para usar ::before */
+  font-size: 1.2em;
+  font-weight: var(--font-weight-bold);
+  display: inline-block;
+}
+
+.dropdown__arrow::before {
+  content: "+";
+  transition: opacity 0.2s ease;
+}
+
+.dropdown[aria-expanded="true"] .dropdown__arrow::before {
+  content: "−";
+}
+
+.dropdown__content {
+  display: flex;
+  flex-direction: column;
+  
+  /* Propiedades para animación de despliegue */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 var(--spacing-md);
+  
+  /* Propiedades de Transición */
+  transition: max-height 0.4s ease-in-out;
+}
+
+.dropdown__content--visible {
+  max-height: 5000px; /* Valor alto para permitir el contenido completo */
+  opacity: 1;
+  padding: var(--spacing-md) var(--spacing-md);
+}
+
+.dropdown__content--hidden {
+  max-height: 0;
+  opacity: 0;
+  padding: 0 var(--spacing-md);
+}
+
+.dropdown__content h2 {
+  padding-top: var(--spacing-sm);
+}
+
+.dropdown__content h3 {
+  padding-top: var(--spacing-lg);
+}
+
+.dropdown__content .paragraph__lora {
+  padding: var(--spacing-sm) 0;
+}
+
+.dropdown__content .small__text {
+  /* Propiedades de Texto y Fuente */
+  font-size: var(--text-helper);
+  padding: var(--spacing-xs) 0;
+}
+
+/* ID container (actualizado al nombre usado en HTML) */
+#curriculum-dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
+
 /* 62 Desktop */
 @media (min-width: 62rem) {
   .acerca {
@@ -712,6 +816,7 @@ fieldset {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
+  padding: 0 var(--spacing-md);
 }
 
 .legend {
@@ -810,6 +915,7 @@ input {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: var(--spacing-sm);
 }
 
 .form__checkbox-option {
@@ -852,6 +958,7 @@ textarea {
   padding: var(--spacing-xs);
   /* Propiedades Visuales */
   border: none;
+  width: 100%;
 }
 
 /* 6. BLOQUE: FOOTER -------------------------------------------------------- */
@@ -893,5 +1000,3 @@ textarea {
     margin: 0 auto;
   }
 }
-
-
