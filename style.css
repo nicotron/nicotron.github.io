@@ -1000,3 +1000,24 @@ textarea {
     margin: 0 auto;
   }
 }
+
+/* Estilos para elementos type-base (breadcrumb navigation) */
+div.type-base {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  margin-left: 5px;
+}
+
+/* Estilos para elementos video dentro de media-border-container */
+.media-border-container video,
+.media-controller video {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+  box-sizing: content-box;
+}
