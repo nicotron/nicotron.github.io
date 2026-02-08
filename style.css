@@ -198,7 +198,7 @@ html {
   padding: var(--spacing-sm);
 }
 
-/* 63 Desktop */
+/* 62rem Desktop */
 @media (min-width: 62rem) {
   .header__container {
     display:flex;
