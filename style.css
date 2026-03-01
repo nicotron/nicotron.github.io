@@ -726,68 +726,23 @@ html {
 .work {
   /* Propiedades de Layout / Modelo de Caja */
   display: grid;
-  grid-template-columns: 1fr 2fr;
   gap: var(--spacing-lg);
   align-items: start;
 }
 
-.work__toc {
-  /* Propiedades de Layout / Modelo de Caja */
-  position: sticky;
-  top: var(--spacing-sm);
-}
-
-.work__toc ul {
   /* Propiedades de Layout / Modelo de Caja */
   display: grid;
   gap: var(--spacing-xs);
-  padding-left: 0;
-
-  /* Propiedades Visuales */
-  list-style: none;
 }
 
-.work__toc a {
-  /* Propiedades Visuales */
-  color: inherit;
-
-  /* Propiedades de Texto y Fuente */
-  text-decoration: none;
-}
-
-.work__toc a.menu__link--active {
-  /* Propiedades Visuales */
-  color: var(--color-accent);
-}
-
-.work__content {
   /* Propiedades de Layout / Modelo de Caja */
-  display: grid;
-  gap: var(--spacing-md);
 }
 
-.work__content article {
   /* Propiedades de Layout / Modelo de Caja */
-  scroll-margin-top: 64px;
-}
-
-.work__content h2 {
-  /* Propiedades de Layout / Modelo de Caja */
-  position: sticky;
-  top: 0;
-  padding: var(--spacing-xs) 0;
 
   /* Propiedades Visuales */
-  background: var(--color-light-tertiary);
-  border-bottom: 1px solid var(--color-grey_0);
-  z-index: 1;
 }
 
-/* 48 Tablet */
-@media (min-width: 48rem) {
-  .work__content article {
-    scroll-margin-top: 80px;
-  }
 }
 
 /* 62 Desktop */
