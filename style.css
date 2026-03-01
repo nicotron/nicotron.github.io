@@ -727,22 +727,48 @@ html {
   /* Propiedades de Layout / Modelo de Caja */
   display: grid;
   gap: var(--spacing-lg);
+  padding: 0 var(--spacing-xs);
   align-items: start;
 }
 
+.work-content {
   /* Propiedades de Layout / Modelo de Caja */
   display: grid;
   gap: var(--spacing-xs);
 }
 
+.work-content-cta {
   /* Propiedades de Layout / Modelo de Caja */
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+  justify-content: right;
 }
 
+.work-arrow {
   /* Propiedades de Layout / Modelo de Caja */
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
 
   /* Propiedades Visuales */
+  background-color: var(--color-light-secondary);
+  color: var(--color-dark-primary);
+
+  /* Propiedades de Texto y Fuente */
+  font-size: 1.25rem;
+  line-height: 2;
+
+  /* Propiedades de Interacción */
+  /* cursor: pointer;
+  transition: background-color 0.2s, transform 0.15s; */
 }
 
+.work-arrow:hover {
+  background-color: var(--color-dark-primary);
+  color: var(--color-light-primary);
 }
 
 /* 62 Desktop */
