@@ -1,23 +1,27 @@
 (function () {
-  var img = document.getElementById('work-dominga-img');
-  var btnPrev = document.getElementById('work-arrow-prev');
-  var btnNext = document.getElementById('work-arrow-next');
-  var base = 'img/trabajo/dominga_trabajo_';
-  var total = 3;  // imágenes 0, 1 y 2
-  var current = 0;
+  var total = 3;  // imágenes 0, 1 y 2 por artículo
+  var items = document.querySelectorAll('.work-item');
 
-  if (!img || !btnPrev || !btnNext) return;
+  items.forEach(function (item) {
+    var base = item.getAttribute('data-slider-base');
+    var img = item.querySelector('.work-item-img');
+    var btnPrev = item.querySelector('.work-arrow--prev');
+    var btnNext = item.querySelector('.work-arrow--next');
+    var current = 0;
 
-  function setImage(index) {
-    current = index;
-    img.src = base + current + '.png';
-  }
+    if (!base || !img || !btnPrev || !btnNext) return;
 
-  btnNext.addEventListener('click', function () {
-    setImage((current + 1) % total);
-  });
+    function setImage(index) {
+      current = index;
+      img.src = base + current + '.png';
+    }
 
-  btnPrev.addEventListener('click', function () {
-    setImage((current - 1 + total) % total);
+    btnNext.addEventListener('click', function () {
+      setImage((current + 1) % total);
+    });
+
+    btnPrev.addEventListener('click', function () {
+      setImage((current - 1 + total) % total);
+    });
   });
 })();
