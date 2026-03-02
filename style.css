@@ -961,9 +961,11 @@ textarea {
 .footer {
   /* Propiedades de Layout / Modelo de Caja */
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
   padding: var(--spacing-md);
+  align-items: center;
 }
 
 .footer__copyright {
@@ -972,6 +974,35 @@ textarea {
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
+}
+
+.footer__back-to-top {
+  /* Propiedades de Layout / Modelo de Caja */
+  box-sizing: border-box;
+  padding: var(--spacing-sm);
+  min-width: 150px;
+  border: none;
+
+  /* Propiedades Visuales */
+  background-color: var(--color-light-secondary);
+  color: var(--color-dark-secondary);
+
+  /* Propiedades de Texto y Fuente */
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.02rem;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  /* Propiedades de Interacción */
+  cursor: pointer;
+  transition: background 0.13s;
+}
+
+.footer__back-to-top:hover {
+  background-color: var(--color-dark-primary);
+  color: var(--color-light-primary);
 }
 
 /* 48 Tablet */
