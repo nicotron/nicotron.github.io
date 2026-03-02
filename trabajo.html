@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Trabajos | Nicolás Troncoso López</title>
+</head>
+<body id="top">
+    <div class="header__container">
+        <header class="header">
+            <h1 class="header__title">Trabajos </h1>
+            <button class="header__menu-toggle" aria-controls="main-menu" aria-expanded="false">
+                <span class="header__menu-line"></span>
+                <span class="header__menu-line"></span>
+                <span class="header__menu-line"></span>
+            </button>
+        </header>
+        <nav id="main-menu" class="menu">
+            <ul class="menu__list">
+                <li class="menu__item"><a href="index.html" class="menu__link">inicio</a></li>
+                <li class="menu__item"><a href="acerca.html" class="menu__link">acerca</a></li>
+                <li class="menu__item"><a href="trabajo.html" class="menu__link menu__link--active">trabajo</a></li>
+                <li class="menu__item"><a href="contacto.html" class="menu__link">contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        <div class="work">
+            <h2>Diseño y desarrollo de productos digitales e interfaces para sistemas complejos, integrando visualización de datos, diseño computacional y tecnología de código abierto.</h2> 
+            <section class="work-content">
+                <article class="work-item" data-slider-base="img/trabajo/dominga_xs_">
+                    <img class="work-item-img" src="img/trabajo/dominga_xs_0.png" alt="Dominga Software">
+                    <h2>Dominga Generativa</h2>
+                    <p>Diseño y simulación de geometrías para impresión FDM (Fused Deposition Modeling)</p>
+                    <div class="work-content-cta">
+                        <button type="button" class="work-arrow work-arrow--prev" aria-label="Anterior">anterior</button>
+                        <button type="button" class="work-arrow work-arrow--next" aria-label="Siguiente">siguiente</button>
+                    </div>
+                </article>
+                <article class="work-item" data-slider-base="img/trabajo/code_dibujo_xs_">
+                    <img class="work-item-img" src="img/trabajo/code_dibujo_xs_0.png" alt="Code Dibujo">
+                    <h2>Code Dibujo</h2>
+                    <p>Proyecto de dibujo generativo con código.</p>
+                    <div class="work-content-cta">
+                        <button type="button" class="work-arrow work-arrow--prev" aria-label="Anterior">anterior</button>
+                        <button type="button" class="work-arrow work-arrow--next" aria-label="Siguiente">siguiente</button>
+                    </div>
+                </article>
+                <article class="work-item" data-slider-base="img/trabajo/generative_code_xs_">
+                    <img class="work-item-img" src="img/trabajo/generative_code_xs_0.png" alt="Generative Code">
+                    <h2>Generative Code</h2>
+                    <p>Diseño generativo y programación creativa.</p>
+                    <div class="work-content-cta">
+                        <button type="button" class="work-arrow work-arrow--prev" aria-label="Anterior">anterior</button>
+                        <button type="button" class="work-arrow work-arrow--next" aria-label="Siguiente">siguiente</button>
+                    </div>
+                </article>
+                <article class="work-item" data-slider-base="img/trabajo/docencia_uxui_xs_">
+                    <img class="work-item-img" src="img/trabajo/docencia_uxui_xs_0.png" alt="Docencia UX/UI">
+                    <h2>Docencia UX/UI</h2>
+                    <p>Enseñanza de diseño de experiencia e interfaces.</p>
+                    <div class="work-content-cta">
+                        <button type="button" class="work-arrow work-arrow--prev" aria-label="Anterior">anterior</button>
+                        <button type="button" class="work-arrow work-arrow--next" aria-label="Siguiente">siguiente</button>
+                    </div>
+                </article>
+                <article class="work-item" data-slider-base="img/trabajo/docencia_ixd_xs_">
+                    <img class="work-item-img" src="img/trabajo/docencia_ixd_xs_0.png" alt="Docencia IxD">
+                    <h2>Docencia IxD</h2>
+                    <p>Diseño de interacción y experiencias digitales.</p>
+                    <div class="work-content-cta">
+                        <button type="button" class="work-arrow work-arrow--prev" aria-label="Anterior">anterior</button>
+                        <button type="button" class="work-arrow work-arrow--next" aria-label="Siguiente">siguiente</button>
+                    </div>
+                </article>
+                <article class="work-item" data-slider-base="img/trabajo/docencia_code_xs_">
+                    <img class="work-item-img" src="img/trabajo/docencia_code_xs_0.png" alt="Docencia Code">
+                    <h2>Docencia Code</h2>
+                    <p>Programación creativa y código como herramienta de diseño.</p>
+                    <div class="work-content-cta">
+                        <button type="button" class="work-arrow work-arrow--prev" aria-label="Anterior">anterior</button>
+                        <button type="button" class="work-arrow work-arrow--next" aria-label="Siguiente">siguiente</button>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <p class="footer__copyright">© 2011-2024</p>
+        <a class="footer__back-to-top" href="#top">subir</a>
+    </footer>
+    <script src="js/menu.js"></script>
+    <script src="js/work-slider.js"></script>
+</body>
+</html>
