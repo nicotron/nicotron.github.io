@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Trabajos | Nicolás Troncoso López</title>
+</head>
+<body id="top">
+    <div class="header__container">
+        <header class="header">
+            <h1 class="header__title">Visualización de Datos</h1>
+            <button class="header__menu-toggle" aria-controls="main-menu" aria-expanded="false">
+                <span class="header__menu-line"></span>
+                <span class="header__menu-line"></span>
+                <span class="header__menu-line"></span>
+            </button>
+        </header>
+        <nav id="main-menu" class="menu">
+            <ul class="menu__list">
+                <li class="menu__item"><a href="index.html" class="menu__link">inicio</a></li>
+                <li class="menu__item"><a href="acerca.html" class="menu__link">acerca</a></li>
+                <li class="menu__item"><a href="trabajo.html" class="menu__link">trabajo</a></li>
+                <li class="menu__item"><a href="contacto.html" class="menu__link">contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        <section class="work__header">
+            <img class="work__header-img" src="img/portafolio/portafolio_header_xs.png" alt="Encabezado del portafolio">
+            <p class="header__h2">Imágenes creadas por algoritmos en conjunto con herramientas gráficas de Adobe</p> 
+            <h2 class="header__h2">Proceso</h2>
+            <p class="header__h2">Consiste en <strong>adquirir</strong> datos desde archivos o redes; <strong>analizar</strong> para estructurarlos en categorías; <strong>filtrar</strong> para conservar solo los relevantes; <strong>extraer</strong> patrones mediante métodos estadísticos o minería de datos; <strong>representar</strong> en formas visuales como gráficos o listas; <strong>refinar</strong> para mayor claridad visual; y diseñar interacción para manipularlos y controlar su visualización.</p>
+        </section>
+        <div class="work">
+            <section class="work-content">
+                <article class="work-item" data-slider-base="img/portafolio/portafolio_data_clima_xs_" data-slider-total="5">
+                    <h2>Datos climáticos temperaturas históricas de ciudades</h2>
+                    <img class="work-item-img" src="img/portafolio/portafolio_data_clima_prev.png" alt="Colourdar data visualization">
+                    <small>Temperaturas anuales (arriba), históricas (abajo)</small>
+                    <img class="work-item-img" src="img/portafolio/portafolio_data_clima_xs_0.png" alt="temperatura nueva york" data-slider="primary">
+                    <div class="work-content-cta">
+                        <button type="button" class="work-arrow work-arrow--prev" aria-label="Anterior">←</button>
+                        <button type="button" class="work-arrow work-arrow--next" aria-label="Siguiente">→</button>
+                    </div>
+                </article>
+                <article class="work-item" data-slider-base="img/portafolio/portafolio_data_sismos_xs_" data-slider-total="3">
+                    <h2>Datos geográficos de sismos</h2>
+                    <img class="work-item-img" src="img/portafolio/portafolio_data_sismos_xs_0.png" alt="sismos historicos en chile" data-slider="primary">
+                    <small>Sismos históricos en territorio chileno</small>
+                    <div class="work-content-cta">
+                        <button type="button" class="work-arrow work-arrow--prev" aria-label="Anterior">←</button>
+                        <button type="button" class="work-arrow work-arrow--next" aria-label="Siguiente">→</button>
+                    </div>
+                </article>
+                <article class="work-item" data-slider-base="img/portafolio/portafolio_data_texto_xs_" data-slider-total="3">
+                    <h2>Datos de texto TF (frecuencia de término)</h2>
+                    <img class="work-item-img" src="img/portafolio/portafolio_data_texto_prev.png" alt="analisis de texto discursos presidenciales">
+                    <small>Frecuencia de términos en discursos presidenciales</small>
+                    <img class="work-item-img" src="img/portafolio/portafolio_data_texto_xs_0.png" alt="analisis de texto Detenidos Desaparecidos. Relaciones entre hermanos, hermanas (amarillo); Mujeres (rojo)" data-slider="primary">
+                    <small>Detenidos Desaparecidos. Relaciones entre hermanos, hermanas (amarillo); Mujeres (rojo)</small>
+                    <div class="work-content-cta">
+                        <button type="button" class="work-arrow work-arrow--prev" aria-label="Anterior">←</button>
+                        <button type="button" class="work-arrow work-arrow--next" aria-label="Siguiente">→</button>
+                    </div>
+                </article>
+                <article class="work-item">
+                    <h2>Datos Bancarios</h2>
+                    <iframe
+                        class="work-item-video"
+                        src="https://player.vimeo.com/video/465454176?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                        width="1920"
+                        height="1080"
+                        frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        title="Chile Bank Ranking"></iframe>
+                    
+                    <small>Ranking de utilidades de bancos en Chile durante febrero 2012 y abril 2019</small>
+                </article>
+            </section>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <p class="footer__copyright">© 2011-2024</p>
+        <a class="footer__back-to-top" href="#top">subir</a>
+    </footer>
+    <script src="js/menu.js"></script>
+    <script src="js/work-slider.js"></script>
+</body>
+</html>
