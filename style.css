@@ -144,8 +144,8 @@ h2 {
   /* Propiedades de Texto y Fuente */
   font-size: var(--h2-mobile);
   font-weight: var(--font-weight-regular);
-  letter-spacing: var(--tracking-normal);
-  line-height: var(--leading-none);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
 }
 
 h3 {
@@ -160,7 +160,13 @@ p {
   /* Propiedades de Texto y Fuente */
   font-size: var(--p-mobile);
   letter-spacing: var(--tracking-normal);
-  line-height: var(--leading-none);
+  line-height: var(--leading-normal);
+}
+
+small {
+  font-size: var(--text-helper);
+  line-height: auto;
+  letter-spacing: var(--tracking-tight);
 }
 
 /* 48 Tablet */
@@ -756,6 +762,13 @@ html {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
+}
+
+.work-item-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
 }
 
 .work-content-cta {
