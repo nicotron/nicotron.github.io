@@ -768,6 +768,9 @@ html {
 
 .work-arrow {
   /* Propiedades de Layout / Modelo de Caja */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
   padding: var(--spacing-sm);
   min-width: 150px;
@@ -973,7 +976,7 @@ textarea {
 .footer {
   /* Propiedades de Layout / Modelo de Caja */
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   gap: var(--spacing-sm);
   padding: var(--spacing-md);
@@ -990,6 +993,9 @@ textarea {
 
 .footer__back-to-top {
   /* Propiedades de Layout / Modelo de Caja */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
   padding: var(--spacing-sm);
   min-width: 150px;
