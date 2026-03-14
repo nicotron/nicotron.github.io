@@ -30,14 +30,17 @@
     </div>
     <main>
         <section class="work__header">
-            <img class="work__header-img" src="img/portafolio/portafolio_header_xs.png" alt="Encabezado del portafolio">
+            <picture>
+                <source srcset="img/portafolio/portafolio_header_md.png" media="(min-width: 48rem)">
+                <img class="work__header-img" src="img/portafolio/portafolio_header_xs.png" alt="Encabezado del portafolio">
+            </picture>
             <p class="header__h2">Imágenes creadas por algoritmos en conjunto con herramientas gráficas de Adobe</p> 
-            <h2 class="header__h2">Proceso</h2>
+            <h1 class="header__h1">Proceso</h1>
             <p class="header__h2">Consiste en <strong>adquirir</strong> datos desde archivos o redes; <strong>analizar</strong> para estructurarlos en categorías; <strong>filtrar</strong> para conservar solo los relevantes; <strong>extraer</strong> patrones mediante métodos estadísticos o minería de datos; <strong>representar</strong> en formas visuales como gráficos o listas; <strong>refinar</strong> para mayor claridad visual; y diseñar interacción para manipularlos y controlar su visualización.</p>
         </section>
         <div class="work">
             <section class="work-content">
-                <article class="work-item" data-slider-base="img/portafolio/portafolio_data_clima_xs_" data-slider-total="5">
+                <article class="work-item" data-slider-base="img/portafolio/portafolio_data_clima_xs_" data-slider-total="5" data-slider-base-md="img/portafolio/portafolio_data_clima_md_" data-slider-total-md="4">
                     <h2>Datos climáticos temperaturas históricas de ciudades</h2>
                     <img class="work-item-img" src="img/portafolio/portafolio_data_clima_prev.png" alt="Colourdar data visualization">
                     <small>Temperaturas anuales (arriba), históricas (abajo)</small>
@@ -47,7 +50,8 @@
                         <button type="button" class="work-arrow work-arrow--next" aria-label="Siguiente">→</button>
                     </div>
                 </article>
-                <article class="work-item" data-slider-base="img/portafolio/portafolio_data_sismos_xs_" data-slider-total="3">
+
+                <article class="work-item" data-slider-base="img/portafolio/portafolio_data_sismos_xs_" data-slider-total="3" data-slider-base-md="img/portafolio/portafolio_data_sismos_md_" data-slider-total-md="4">
                     <h2>Datos geográficos de sismos</h2>
                     <img class="work-item-img" src="img/portafolio/portafolio_data_sismos_xs_0.png" alt="sismos historicos en chile" data-slider="primary">
                     <small>Sismos históricos en territorio chileno</small>
@@ -56,9 +60,14 @@
                         <button type="button" class="work-arrow work-arrow--next" aria-label="Siguiente">→</button>
                     </div>
                 </article>
-                <article class="work-item" data-slider-base="img/portafolio/portafolio_data_texto_xs_" data-slider-total="3">
+
+                <article class="work-item" data-slider-base="img/portafolio/portafolio_data_texto_xs_" data-slider-total="3" data-slider-base-md="img/portafolio/portafolio_data_texto_md_" data-slider-total-md="3">
                     <h2>Datos de texto TF (frecuencia de término)</h2>
-                    <img class="work-item-img" src="img/portafolio/portafolio_data_texto_prev.png" alt="analisis de texto discursos presidenciales">
+                    <picture>
+                        <source srcset="img/portafolio/portafolio_data_texto_header_md.png" media="(min-width: 48rem)">
+                        <img class="work__header-img" src="img/portafolio/portafolio_data_texto_header_xs.png" alt="Encabezado del portafolio">
+                    </picture>
+                    <!-- <img class="work-item-img" src="img/portafolio/portafolio_data_texto_header_xs.png" alt="analisis de texto discursos presidenciales"> -->
                     <small>Frecuencia de términos en discursos presidenciales</small>
                     <img class="work-item-img" src="img/portafolio/portafolio_data_texto_xs_0.png" alt="analisis de texto Detenidos Desaparecidos. Relaciones entre hermanos, hermanas (amarillo); Mujeres (rojo)" data-slider="primary">
                     <small>Detenidos Desaparecidos. Relaciones entre hermanos, hermanas (amarillo); Mujeres (rojo)</small>
@@ -67,6 +76,7 @@
                         <button type="button" class="work-arrow work-arrow--next" aria-label="Siguiente">→</button>
                     </div>
                 </article>
+                
                 <article class="work-item">
                     <h2>Datos Bancarios</h2>
                     <iframe
@@ -86,8 +96,13 @@
         </div>
     </main>
     <footer class="footer">
-        <p class="footer__copyright">© 2011-2024</p>
-        <a class="footer__back-to-top" href="#top">subir</a>
+        <div class="footer__links">
+            <!-- <a class="work-arrow" href="portafolio.html">portafolio</a> -->
+            <a class="footer__back-to-top" href="#top">subir</a>
+        </div>
+        <div class="footer__meta">
+            <p class="footer__copyright">© 2011-2024</p>
+        </div>
     </footer>
     <script src="js/menu.js"></script>
     <script src="js/work-slider.js"></script>

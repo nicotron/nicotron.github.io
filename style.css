@@ -171,7 +171,14 @@ small {
 
 /* 48 Tablet */
 @media (min-width: 48rem) {
+  h1 {
+    font-size: var(--h1-tablet);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--leading-tight);
+  }
   p { font-size: var(--p-tablet); }
+  h2 { font-size: var(--h2-tablet); }
+  .header__h2 { font-size: var(--p-tablet); }
 }
 
 /* 3.1 COMPORTAMIENTO GLOBAL DE SCROLL */
@@ -734,14 +741,49 @@ html {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
+  padding: var(--spacing-xs);
   align-items: start;
   width: 100%;
   max-width: var(--breakpoint-lg);
   margin: 0 auto;
 }
+/* 48 Tablet: centrar bloque work horizontalmente y su contenido */
+@media (min-width: 48rem) {
+  .work {
+    align-items: center;
+  }
+}
+/* 62 Desktop */
+@media (min-width: 62rem) {
+  .work {
+    /* Propiedades de Layout / Modelo de Caja */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: flex-end; */
+    width: var(--breakpoint-md);
+    margin: 0 auto;
+  }
+}
+
+
+.work__header-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.work__header {
+  padding: 0 var(--spacing-xs);
+}
+/* 48 Tablet: centrar bloque work horizontalmente y su contenido */
+@media (min-width: 48rem) {
+  .work__header {
+    padding: 0 var(--spacing-lg);
+  }
+}
 
 .header__h2 {
-  padding: var(--spacing-xs);
+  padding:var(--spacing-xs) 0;
 }
 
 .work-content {
@@ -749,7 +791,13 @@ html {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
-  padding: var(--spacing-xs);
+  padding: var(--spacing-xs) 0px;
+}
+/* 48 Tablet */
+@media (min-width: 48rem) {
+  .work-content {
+    gap: var(--spacing-lg);
+  }
 }
 
 #docencia {
@@ -762,6 +810,13 @@ html {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
+}
+
+/* 48 Tablet */
+@media (min-width: 48rem) {
+  .work-item {
+    /* gap: var(--spacing-md); */
+  }
 }
 
 .work-item-video {
