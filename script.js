@@ -32,6 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   sections.forEach((sec) => observer.observe(sec));
+
+  // Video hover functionality
+  const videos = document.querySelectorAll('.video-item video');
+  videos.forEach(video => {
+    video.addEventListener('mouseenter', () => video.pause());
+    video.addEventListener('mouseleave', () => video.play());
+  });
 });
 
 
