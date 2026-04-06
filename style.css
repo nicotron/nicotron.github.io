@@ -9,6 +9,7 @@
   --color-black_2: #16191D;
   --color-black_3: #2E3338;
   --color-grey_0: #E5E6E7;
+  --color-grey-mid: #848484;
   --color-gold: #EBDABA;
   --color-green: #2ECC71;
   --color-blue: #6F96B2;
@@ -178,13 +179,21 @@ small {
   }
   p { font-size: var(--p-tablet); }
   h2 { font-size: var(--h2-tablet); }
-  .header__h2 { font-size: var(--p-tablet); }
+  /* .header__h2 { font-size: var(--p-tablet); } */
 }
+/* 62 Tablet */
+@media (min-width: 62rem) {
+  h2 { 
+    font-size: var(--h2-desktop); 
+  }
+}
+/* .header__h2 { font-size: var(--p-tablet); } */
 
 /* 3.1 COMPORTAMIENTO GLOBAL DE SCROLL */
 html {
   /* Propiedades de Transición */
   scroll-behavior: smooth;
+    overflow-y: scroll;
 }
 
 .paragraph__lora {
@@ -342,10 +351,10 @@ html {
 @media (min-width: 62rem) {
   .menu {
     width: auto;
-    padding: var(--spacing-sm) var(--spacing-sm);
+    padding: var(--spacing-sm);
   }
   .menu__item {
-    width: 154px;
+    width: auto;
   }
 }
 
@@ -356,7 +365,7 @@ html {
   padding: var(--spacing-sm);
 
   /* Propiedades Visuales */
-  background-color: var(--color-light-secondary);
+  /* background-color: var(--color-light-secondary); */
   color: var(--color-dark-secondary);
 
   /* Propiedades de Texto y Fuente */
@@ -364,7 +373,7 @@ html {
   font-style: var(--font-weight-bold);
   font-weight: 700;
   text-align: center;
-  letter-spacing: 0.02rem;
+  letter-spacing: 0.35px;
   text-transform: uppercase;
   text-decoration: none;
 
@@ -374,7 +383,7 @@ html {
 
 .menu__link {
   /* Propiedades de Layout / Modelo de Caja */
-  display: block; /* Hace que el enlace ocupe todo el espacio del li */
+  display: block;
 }
 
 .menu__link--active {
@@ -390,7 +399,7 @@ html {
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  padding: var(--spacing-md) 0px;
+  padding-top: var(--spacing-md);
   /* margin-top: var(--spacing-md); */
 }
 
@@ -443,9 +452,8 @@ html {
 
   /* Propiedades de Texto y Fuente */
   font-size: var(--text-base);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: 0.02rem;
-  text-transform: uppercase;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--tracking-normal);
   padding: var(--spacing-sm);
 }
 
@@ -479,23 +487,16 @@ html {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-xs);
     width: 100%;
-    padding-left: 7%;
-  }  
-}
-
-/* 90 xl extra large */
-@media (min-width: 90rem) {
-  .cta__slide-controls {
-    padding-left: 12.5%;
+    /* padding: 0 var(--spacing-lg); */
   }
-}
 
-/* 120 HD 4K */
-@media (min-width: 90rem) {
-  .cta__slide-controls {
-    padding-left: 17%;
+  .cta__slide-indicator {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-regular);
+    letter-spacing: 0.48px;
+    text-transform: none;
   }
 }
 
@@ -603,13 +604,47 @@ html {
   .hero {
     flex-direction: row-reverse;
     justify-content: center;
-    align-items: end;
+    align-items: flex-end;
   }
 
   .hero__content {
-    max-width: 390px;
+    max-width: 360px;
     width: auto;
     padding: var(--spacing-md);
+  }
+}
+
+/* 80rem Large Desktop */
+@media (min-width: 79rem) {
+  .hero__group {
+    padding: 0 var(--spacing-lg);
+    gap: var(--spacing-sm);
+  }
+
+  .hero {
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .hero__content {
+    width: 360px;
+    max-width: 360px;
+    padding: 0;
+  }
+
+  .hero__image {
+    /* width: 800px; */
+    /* height: 600px; */
+    overflow: visible;
+    display: block;
+  }
+
+  .hero__image img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: contain;
+    border-radius: 4px;
   }
 }
 
@@ -747,29 +782,29 @@ html {
   max-width: var(--breakpoint-lg);
   margin: 0 auto;
 }
-/* 48 Tablet: centrar bloque work horizontalmente y su contenido */
-@media (min-width: 48rem) {
-  .work {
-    align-items: center;
-  }
-}
-/* 62 Desktop */
+/* 62 Tablet: centrar bloque work horizontalmente y su contenido */
 @media (min-width: 62rem) {
-  .work {
-    /* Propiedades de Layout / Modelo de Caja */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: flex-end; */
+ .work {
+    align-items: center;
     width: var(--breakpoint-md);
     margin: 0 auto;
   }
 }
 
-
 .work__header-img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+}
+/* 62 Tablet: centrar bloque work horizontalmente y su contenido */
+@media (min-width: 62rem) {
+  .work__header-img {
+    display: block;
+    width: 100%;
+    height: 82dvh;
+    object-fit: cover;
+  }
 }
 
 .work__header {
@@ -779,6 +814,60 @@ html {
 @media (min-width: 48rem) {
   .work__header {
     padding: 0 var(--spacing-lg);
+  }
+}
+/* AI ---------------------------------------------------------- */
+#main__gen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.work__header__ai {
+  padding: 0 var(--spacing-xs);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ai__wrap, .gen__wrap{
+  padding-top: var(--spacing-sm);
+
+}
+.video-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+.video__vimeo-item  { 
+  margin-bottom: var(--spacing-md);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  margin: var(--spacing-md) 0;
+}
+
+.video__vimeo-item iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.background__video-black {
+  background-color: black;
+}
+/* 48 Tablet */
+@media (min-width: 48rem) {
+  .video-grid {
+    display: flex;
+    width: auto;
+    padding: var(--spacing-md) 0;
+  }
+}
+/* 62 Desktop */
+@media (min-width: 62rem) {
+  .video-grid {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-md);
   }
 }
 
@@ -801,7 +890,8 @@ html {
 }
 
 #docencia {
-  padding-top: var(--spacing-lg);
+  padding: var(--spacing-lg) ;
+  
   background: var(--color-grey_0);
 }
 
@@ -810,13 +900,6 @@ html {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
-}
-
-/* 48 Tablet */
-@media (min-width: 48rem) {
-  .work-item {
-    /* gap: var(--spacing-md); */
-  }
 }
 
 .work-item-video {
@@ -1040,6 +1123,81 @@ textarea {
   width: 100%;
 }
 
+/* Feedback page ----------------------------------------------------------- */
+.feedback-page {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-md);
+}
+
+.feedback-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+  padding: var(--spacing-lg);
+  background: linear-gradient(180deg, var(--color-light-secondary) 0%, var(--color-white_3) 100%);
+  border: 1px solid var(--color-grey_0);
+}
+
+.feedback-card__eyebrow {
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+.feedback-card__title {
+  font-size: var(--h2-mobile);
+  line-height: var(--leading-tight);
+}
+
+.feedback-card__text {
+  padding: 0;
+}
+
+.feedback-card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.feedback-card__button {
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 48rem) {
+  .feedback-page {
+    padding: var(--spacing-lg);
+  }
+
+  .feedback-card {
+    max-width: 52rem;
+    padding: var(--spacing-2xl);
+  }
+
+  .feedback-card__title {
+    font-size: var(--h2-tablet);
+  }
+
+  .feedback-card__actions {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .feedback-card__button {
+    width: auto;
+  }
+}
+
+@media (min-width: 62rem) {
+  .feedback-page {
+    min-height: calc(100vh - 10rem);
+    align-items: center;
+  }
+}
+
 /* 6. BLOQUE: FOOTER -------------------------------------------------------- */
 .footer {
   /* Propiedades de Layout / Modelo de Caja */
@@ -1094,23 +1252,16 @@ textarea {
 /* 48 Tablet */
 @media (min-width: 48rem) {
   .footer {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
   }
 }
 
 /* 62 Desktop */
 @media (min-width: 62rem) {
   .footer {
-    margin: 0 auto;
-    width: var(--breakpoint-lg);
-  }
-}
-
-/* 120 4K Desktop */
-@media (min-width: 120rem) {
-  .footer {
-    width: var(--breakpoint-xxl);
-    margin: 0 auto;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: var(--spacing-lg);
   }
 }
 
@@ -1133,4 +1284,10 @@ div.type-base {
   margin-left: 8px;
   margin-right: 8px;
   box-sizing: content-box;
+}
+
+body, main, .container {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
 }
