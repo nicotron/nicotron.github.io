@@ -1652,8 +1652,8 @@ div.type-base {
 .portfolio-gallery {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2px;
-  padding: 2px;
+  gap: 2px;     /* hairline seam — below token scale, intentional */
+  padding: 2px; /* hairline border — below token scale, intentional */
 }
 
 .portfolio-gallery__card {
@@ -1676,11 +1676,13 @@ div.type-base {
 .portfolio-gallery__card-overlay {
   position: absolute;
   inset: 0;
+  /* rgba(2,3,3) = --color-black_1 (#020303) — CSS gradient requires rgba, no token available */
   background: linear-gradient(to top, rgba(2, 3, 3, 0.85) 0%, rgba(2, 3, 3, 0.1) 60%);
   display: flex;
   align-items: flex-end;
   padding: var(--spacing-md);
   transition: opacity 0.13s;
+  opacity: 1;
 }
 
 .portfolio-gallery__card-title {
