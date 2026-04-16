@@ -1647,3 +1647,77 @@ div.type-base {
   box-sizing: content-box;
 }
 
+/* 10. BLOQUE: PORTAFOLIO GALLERY
+------------------------------------------------- */
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+  padding: 2px;
+}
+
+.portfolio-gallery__card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  text-decoration: none;
+  background-color: var(--color-dark-tertiary);
+}
+
+.portfolio-gallery__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-gallery__card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(2, 3, 3, 0.85) 0%, rgba(2, 3, 3, 0.1) 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--spacing-md);
+  transition: opacity 0.13s;
+}
+
+.portfolio-gallery__card-title {
+  color: var(--color-light-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  line-height: var(--leading-none);
+}
+
+/* touch devices: overlay siempre visible */
+@media (hover: none) {
+  .portfolio-gallery__card-overlay {
+    opacity: 1;
+  }
+}
+
+/* pointer devices: overlay solo en hover */
+@media (hover: hover) {
+  .portfolio-gallery__card-overlay {
+    opacity: 0;
+  }
+
+  .portfolio-gallery__card:hover .portfolio-gallery__card-overlay {
+    opacity: 1;
+  }
+
+  .portfolio-gallery__card:hover img {
+    transform: scale(1.03);
+  }
+}
+
+/* 48 Tablet */
+@media (min-width: 48rem) {
+  .portfolio-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
