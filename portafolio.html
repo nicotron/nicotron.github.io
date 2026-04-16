@@ -27,30 +27,33 @@
                 <li class="menu__item"><a href="contacto.html" class="menu__link">contacto</a></li>
             </ul>
         </nav>
+        <!-- nav activo: portafolio no es ítem del nav principal — sin active state, intencional -->
     </div>
     <main>
-        <section class="portfolio-gallery">
+        <section class="portfolio-gallery" aria-label="Portafolio">
             <a class="portfolio-gallery__card" href="portafolio_data.html">
                 <img src="img/portafolio/portafolio_data_clima_prev_0.png" alt="Data Viz — visualización de datos climáticos, sísmicos y textuales">
                 <div class="portfolio-gallery__card-overlay">
-                    <span class="portfolio-gallery__card-title">Data Viz →</span>
+                    <span class="portfolio-gallery__card-title">Data Viz <span aria-hidden="true">→</span></span>
                 </div>
             </a>
+            <!-- AI: imagen desde CDN Midjourney — no hay asset local para esta sección (ver portafolio_ai.html) -->
             <a class="portfolio-gallery__card" href="portafolio_ai.html">
                 <img src="https://cdn.midjourney.com/f99c1508-3cca-4148-a332-9b35922f9e6d/0_1.png" alt="AI — imaginario físico-digital con Midjourney">
                 <div class="portfolio-gallery__card-overlay">
-                    <span class="portfolio-gallery__card-title">AI →</span>
+                    <span class="portfolio-gallery__card-title">AI <span aria-hidden="true">→</span></span>
                 </div>
             </a>
             <a class="portfolio-gallery__card" href="portafolio_generativo.html">
                 <img src="img/portafolio/portafolio_generativo_xs_0.png" alt="Diseño Generativo — algoritmos generativos en imagen y movimiento">
                 <div class="portfolio-gallery__card-overlay">
-                    <span class="portfolio-gallery__card-title">Generativo →</span>
+                    <span class="portfolio-gallery__card-title">Generativo <span aria-hidden="true">→</span></span>
                 </div>
             </a>
             <a class="portfolio-gallery__card" href="portafolio_uxui_lagas.html">
+                <!-- UX/UI: sin imagen — fondo oscuro vía CSS hasta que haya asset disponible -->
                 <div class="portfolio-gallery__card-overlay">
-                    <span class="portfolio-gallery__card-title">UX/UI →</span>
+                    <span class="portfolio-gallery__card-title">UX/UI <span aria-hidden="true">→</span></span>
                 </div>
             </a>
         </section>
