@@ -932,10 +932,14 @@ html {
 /* 48 Tablet */
 @media (min-width: 48rem) {
   .video-grid {
-    display: flex;
-    max-width: 32%;
-    width: auto;
+    flex-direction: row;
+    gap: var(--spacing-md);
     padding: var(--spacing-md) 0;
+  }
+
+  .video-grid .video-item {
+    flex: 1;
+    min-width: 0;
   }
 }
 /* 62 Desktop */
@@ -1660,7 +1664,7 @@ div.type-base {
   position: relative;
   display: block;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 1.9;
   text-decoration: none;
   background-color: var(--color-dark-tertiary);
 }
@@ -1720,6 +1724,21 @@ div.type-base {
 @media (min-width: 48rem) {
   .portfolio-gallery {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .portfolio-gallery__card {
+    aspect-ratio: 4 / 4.75;
+  }
+
+  .portafolio-page main {
+    flex: 1;
+  }
+}
+
+/* 62 Desktop */
+@media (min-width: 62rem) {
+  .portfolio-gallery__card {
+    aspect-ratio: 4 / 1.9;
   }
 }
 

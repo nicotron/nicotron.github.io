@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Portafolio | Nicolás Troncoso López</title>
 </head>
-<body id="top">
+<body id="top" class="portafolio-page">
     <div class="header__container">
         <header class="header">
             <h1 class="header__title">Portafolio</h1>
@@ -32,37 +32,44 @@
     <main>
         <section class="portfolio-gallery" aria-label="Portafolio">
             <a class="portfolio-gallery__card" href="portafolio_data.html">
-                <img src="img/portafolio/portafolio_data_clima_prev_0.png" alt="Data Viz — visualización de datos climáticos, sísmicos y textuales">
+                <picture>
+                    <source srcset="img/portafolio/portafolio_data_sismos_md_2.png" media="(min-width: 48rem)">
+                    <img src="img/portafolio/portafolio_data_sismos_xs_2.png" alt="Data Viz — visualización de datos climáticos, sísmicos y textuales">
+                </picture>
                 <div class="portfolio-gallery__card-overlay">
-                    <span class="portfolio-gallery__card-title">Data Viz <span aria-hidden="true">→</span></span>
+                    <span class="portfolio-gallery__card-title">Data Viz </span>
                 </div>
             </a>
-            <!-- AI: imagen desde CDN Midjourney — no hay asset local para esta sección (ver portafolio_ai.html) -->
             <a class="portfolio-gallery__card" href="portafolio_ai.html">
-                <img src="https://cdn.midjourney.com/f99c1508-3cca-4148-a332-9b35922f9e6d/0_1.png" alt="AI — imaginario físico-digital con Midjourney">
+                <picture>
+                    <source srcset="img/portafolio/portafolio_ai_md_0.png" media="(min-width: 48rem)">
+                    <img src="img/portafolio/portafolio_ai_xs_0.png" alt="AI — imaginario físico-digital con Midjourney">
+                </picture>
                 <div class="portfolio-gallery__card-overlay">
-                    <span class="portfolio-gallery__card-title">AI <span aria-hidden="true">→</span></span>
+                    <span class="portfolio-gallery__card-title">AI </span>
                 </div>
             </a>
             <a class="portfolio-gallery__card" href="portafolio_generativo.html">
-                <img src="img/portafolio/portafolio_generativo_xs_0.png" alt="Diseño Generativo — algoritmos generativos en imagen y movimiento">
+                <picture>
+                    <source srcset="img/portafolio/portafolio_generativo_MIM.png" media="(min-width: 48rem)">
+                    <img src="img/portafolio/portafolio_generativo_MIM.png" alt="Diseño Generativo — algoritmos generativos en imagen y movimiento">
+                </picture>
                 <div class="portfolio-gallery__card-overlay">
-                    <span class="portfolio-gallery__card-title">Generativo <span aria-hidden="true">→</span></span>
+                    <span class="portfolio-gallery__card-title">Generativo </span>
                 </div>
             </a>
             <a class="portfolio-gallery__card" href="portafolio_uxui_lagas.html">
-                <!-- UX/UI: sin imagen — fondo oscuro vía CSS hasta que haya asset disponible -->
+                <picture>
+                    <source srcset="img/portafolio/portafolio_uxui_lagas_md_0.png" media="(min-width: 48rem)">
+                    <img src="img/portafolio/portafolio_uxui_lagas_xs_0.png" alt="UX/UI — diseño de interfaces para Lagas">
+                </picture>
                 <div class="portfolio-gallery__card-overlay">
-                    <span class="portfolio-gallery__card-title">UX/UI <span aria-hidden="true">→</span></span>
+                    <span class="portfolio-gallery__card-title">UX/UI </span>
                 </div>
             </a>
         </section>
     </main>
     <footer class="footer">
-        <div class="footer__links">
-            <a class="footer__back-to-top" href="#top">subir</a>
-            <a class="footer__back-to-top" href="contacto.html">contacto</a>
-        </div>
         <div class="footer__meta">
             <p class="footer__copyright">© 2011-2024</p>
         </div>
