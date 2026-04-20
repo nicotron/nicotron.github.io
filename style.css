@@ -32,8 +32,6 @@
   --color-error: var(--color-red);
   --color-text-inverted: var(--color-grey_0);
 
-  --color-background: var(--color-white);
-  
   /* Sistema Tipográfico ----------------------- */
   /* Familia tipográfica */
   --font-primary: "Ubuntu";
@@ -178,7 +176,7 @@ p {
 
 small {
   font-size: var(--text-helper);
-  line-height: auto;
+  line-height: normal;
   letter-spacing: var(--tracking-tight);
 }
 
@@ -192,13 +190,6 @@ small {
   p { font-size: var(--p-tablet); }
   h2 { font-size: var(--h2-tablet); }
 }
-/* 62 Tablet */
-@media (min-width: 62rem) {
-  h2 { 
-    font-size: var(--h2-tablet); 
-  }
-}
-
 /* 3.1 COMPORTAMIENTO GLOBAL DE SCROLL */
 html {
   /* Propiedades de Transición */
@@ -375,12 +366,10 @@ html {
   padding: var(--spacing-sm);
 
   /* Propiedades Visuales */
-  /* background-color: var(--color-light-secondary); */
   color: var(--color-dark-secondary);
 
   /* Propiedades de Texto y Fuente */
   font-size: 1rem;
-  font-style: var(--font-weight-bold);
   font-weight: 700;
   text-align: center;
   letter-spacing: 0.35px;
@@ -410,7 +399,6 @@ html {
   justify-content: center;
   width: 100%;
   padding-top: var(--spacing-md);
-  /* margin-top: var(--spacing-md); */
 }
 
 .dropdown-wrapper {
@@ -499,7 +487,6 @@ html {
     align-items: center;
     gap: var(--spacing-xs);
     width: 100%;
-    /* padding: 0 var(--spacing-lg); */
   }
 
   .cta__slide-indicator {
@@ -624,7 +611,7 @@ html {
   }
 }
 
-/* 80rem Large Desktop */
+/* 79 Large Desktop */
 @media (min-width: 79rem) {
   .hero__group {
     padding: 0 var(--spacing-lg);
@@ -643,8 +630,6 @@ html {
   }
 
   .hero__image {
-    /* width: 800px; */
-    /* height: 600px; */
     overflow: visible;
     display: block;
   }
@@ -665,11 +650,10 @@ html {
   }
 }
 
-/* 8. BLOQUE: ACERCA -------------------------------------------------------- */
+/* 7. BLOQUE: ACERCA -------------------------------------------------------- */
 .acerca {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
 }
 
 /* Dropdown - Curriculum */
@@ -774,13 +758,12 @@ html {
     /* Propiedades de Layout / Modelo de Caja */
     display: flex;
     flex-direction: column;
-    /* justify-content: flex-end; */
     width: var(--breakpoint-md);
     margin: 0 auto;
   }
 }
 
-/* 8. BLOQUE: TRABAJO ------------------------------------------------------- */
+/* 8. BLOQUE: TRABAJO Y PORTAFOLIO DATA ------------------------------------- */
 .work {
   /* Propiedades de Layout / Modelo de Caja */
   display: flex;
@@ -792,11 +775,16 @@ html {
   max-width: var(--breakpoint-lg);
   margin: 0 auto;
 }
-/* 62 Tablet: centrar bloque work horizontalmente y su contenido */
+/* 62 Desktop: centrar bloque work */
 @media (min-width: 62rem) {
- .work {
+  .work {
     align-items: center;
-    width: var(--breakpoint-md);
+  }
+}
+/* 80 Large Desktop: limitar ancho a breakpoint-lg */
+@media (min-width: 80rem) {
+  .work {
+    width: var(--breakpoint-lg);
     margin: 0 auto;
   }
 }
@@ -810,10 +798,8 @@ html {
 
 .work-item-img,
 .work__item-img {
-  /* width: 100%;
+  width: 100%;
   height: auto;
-  object-fit: cover; */
-  mix-blend-mode: multiply;
 }
 
 /* 62 Tablet: centrar bloque work horizontalmente y su contenido */
@@ -840,7 +826,7 @@ html {
 #header__data {
   padding-top: var(--spacing-sm);
 }
-/* 120 Desktop */
+/* 90 Extra Large */
 @media (min-width: 90rem) {
   #header__data {
     max-width: var(--breakpoint-lg);
@@ -867,10 +853,9 @@ html {
   justify-content: flex-start;
   padding: 0 var(--spacing-xs);
 }
-/* 90 HHD */
+/* 90 Extra Large */
 @media (min-width: 90rem) {
   .work__header__ai {
-    max-width: var(--breakpoint-lg);
     display: flex;
     margin: 0 auto;
     justify-content: space-between;
@@ -882,7 +867,7 @@ html {
   padding: var(--spacing-xs) 0;
   max-width: 80rem;
 }
-/* 120 Desktop */
+/* 90 Extra Large */
 @media (min-width: 90rem) {
   .header__h2 {
     max-width: var(--breakpoint-lg);
@@ -912,15 +897,14 @@ html {
   width: 100%;
 }
 
-.video__vimeo-item  { 
-  margin-bottom: var(--spacing-md);
+.video__vimeo-item {
   aspect-ratio: 16 / 9;
   overflow: hidden;
   margin: var(--spacing-md) 0;
 }
 
 .video__vimeo-item iframe {
-  display: flex;
+  display: block;
   width: 100%;
   height: 100%;
   border: 0;
@@ -954,15 +938,16 @@ html {
 
 .work-content {
   /* Propiedades de Layout / Modelo de Caja */
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
-  padding: var(--spacing-xs) 0px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: var(--spacing-xs) 0;
 }
 /* 48 Tablet */
 @media (min-width: 48rem) {
   .work-content {
-    gap: var(--spacing-lg);
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
   }
 }
 
@@ -977,6 +962,19 @@ html {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
+  padding: var(--spacing-lg);
+  border-top: 1px solid var(--color-grey_0);
+}
+
+
+.image-container {
+  overflow: hidden;
+}
+
+.work-item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .work-item-video {
@@ -1086,7 +1084,6 @@ fieldset {
 .form__group textarea {
   /* Propiedades Visuales */
   border-style: none none solid none;
-  /* border: 1px solid var(--color-dark-tertiary); */
   color: var(--color-dark-tertiary);
 
   /* Propiedades de Transición */
@@ -1334,7 +1331,6 @@ textarea {
 /* 62 Desktop */
 @media (min-width: 62rem) {
   .footer {
-    /* flex-direction: row; */
     justify-content: center;
     padding: var(--spacing-lg);
   }
