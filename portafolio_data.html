@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Trabajos | Nicolás Troncoso López</title>
 </head>
@@ -38,19 +39,21 @@
                 <img class="work__header-img" src="img/portafolio/portafolio_header_xs.png" alt="Encabezado del portafolio">
             </picture>
             <h1 id="header__data" class="header__h1">Proceso</h1>
-            <p class="header__h2">Consiste en <strong>adquirir</strong> datos desde archivos o redes; <strong>analizar</strong> para estructurarlos en categorías; <strong>filtrar</strong> para conservar solo los relevantes; <strong>extraer</strong> patrones mediante métodos estadísticos o minería de datos; <strong>representar</strong> en formas visuales como gráficos o listas; <strong>refinar</strong> para mayor claridad visual; y diseñar interacción para manipularlos y controlar su visualización.</p>
+            <p class="paragraph__lora">Consiste en <strong>adquirir</strong> datos desde archivos o redes; <strong>analizar</strong> para estructurarlos en categorías; <strong>filtrar</strong> para conservar solo los relevantes; <strong>extraer</strong> patrones mediante métodos estadísticos o minería de datos; <strong>representar</strong> en formas visuales como gráficos o listas; <strong>refinar</strong> para mayor claridad visual; y diseñar interacción para manipularlos y controlar su visualización.</p>
         </section>
         <div class="work">
             <section class="work-content">
                 <article class="work-item" data-slider-base="img/portafolio/portafolio_data_clima_xs_" data-slider-total="5" data-slider-base-md="img/portafolio/portafolio_data_clima_md_" data-slider-total-md="4">
-                    <h2>Datos climáticos temperaturas históricas de ciudades</h2>
+                    <h2>Temperaturas históricas</h2>
                     <picture>
                         <source srcset="img/portafolio/portafolio_data_clima_prev_1.png" media="(min-width: 48rem)">
                         <img class="work-item-img" src="img/portafolio/portafolio_data_clima_prev_0.png" alt="Colourdar data visualization">
                     </picture>
                     
+                    <div class="image-container">
+                        <img class="work-item-img" src="img/portafolio/portafolio_data_clima_xs_0.png" alt="temperatura nueva york" data-slider="primary">
+                    </div>
                     <small>Temperaturas anuales (arriba), históricas (abajo)</small>
-                    <img class="work-item-img" src="img/portafolio/portafolio_data_clima_xs_0.png" alt="temperatura nueva york" data-slider="primary">
                     <div class="work-content-cta">
                         <button type="button" class="work-arrow work-arrow--prev" aria-label="Anterior">←</button>
                         <button type="button" class="work-arrow work-arrow--next" aria-label="Siguiente">→</button>
@@ -58,8 +61,10 @@
                 </article>
 
                 <article class="work-item" data-slider-base="img/portafolio/portafolio_data_sismos_xs_" data-slider-total="3" data-slider-base-md="img/portafolio/portafolio_data_sismos_md_" data-slider-total-md="4">
-                    <h2>Datos geográficos de sismos</h2>
-                    <img class="work-item-img" src="img/portafolio/portafolio_data_sismos_xs_0.png" alt="sismos historicos en chile" data-slider="primary">
+                    <h2>Sismos en territorio chileno</h2>
+                    <div class="image-container">
+                        <img class="work-item-img" src="img/portafolio/portafolio_data_sismos_xs_0.png" alt="sismos historicos en chile" data-slider="primary">
+                    </div>
                     <small>Sismos históricos en territorio chileno</small>
                     <div class="work-content-cta">
                         <button type="button" class="work-arrow work-arrow--prev" aria-label="Anterior">←</button>
@@ -68,13 +73,15 @@
                 </article>
 
                 <article class="work-item" data-slider-base="img/portafolio/portafolio_data_texto_xs_" data-slider-total="3" data-slider-base-md="img/portafolio/portafolio_data_texto_md_" data-slider-total-md="3">
-                    <h2>Datos de texto TF (frecuencia de término)</h2>
+                    <h2>Frecuencia de Términos</h2>
                     <picture>
                         <source srcset="img/portafolio/portafolio_data_texto_header_md.png" media="(min-width: 48rem)">
                         <img class="work__item-img" src="img/portafolio/portafolio_data_texto_header_xs.png" alt="Encabezado del portafolio">
                     </picture>
                     <small>Frecuencia de términos en discursos presidenciales</small>
-                    <img class="work-item-img" src="img/portafolio/portafolio_data_texto_xs_0.png" alt="analisis de texto Detenidos Desaparecidos. Relaciones entre hermanos, hermanas (amarillo); Mujeres (rojo)" data-slider="primary">
+                    <div class="image-container">
+                        <img class="work-item-img" src="img/portafolio/portafolio_data_texto_xs_0.png" alt="analisis de texto Detenidos Desaparecidos. Relaciones entre hermanos, hermanas (amarillo); Mujeres (rojo)" data-slider="primary">
+                    </div>
                     <small>Detenidos Desaparecidos. Relaciones entre hermanos, hermanas (amarillo); Mujeres (rojo)</small>
                     <div class="work-content-cta">
                         <button type="button" class="work-arrow work-arrow--prev" aria-label="Anterior">←</button>
